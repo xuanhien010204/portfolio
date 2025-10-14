@@ -1,4 +1,4 @@
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { SERVICES } from "../constants";
@@ -16,11 +16,10 @@ type ServiceCardProps = {
 const ServiceCard = ({ index, title, icon }: ServiceCardProps) => {
   return (
     <Tilt
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
+      tiltMaxAngleX={45}
+      tiltMaxAngleY={45}
+      scale={1}
+      transitionSpeed={450}
       className="xs:w-[250px] w-full"
     >
       <motion.div
