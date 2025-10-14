@@ -9,6 +9,8 @@ const __dirname = path.dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // Set base to the repo name so assets are loaded correctly on GitHub Pages
+  base: '/portfolio/',
   plugins: [react()],
   resolve: {
     alias: [
