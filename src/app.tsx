@@ -2,7 +2,6 @@ import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
-  Contact,
   Experience,
   Feedbacks,
   Hero,
@@ -32,9 +31,8 @@ const App = () => {
         <Works />
         <Feedbacks />
 
-        {/* Contact */}
+        {/* Contact removed */}
         <div className="relative z-0">
-          <Contact />
           <StarsCanvas />
         </div>
         <Footer />
