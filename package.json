@@ -42,11 +42,12 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check-types": "tsc --noEmit"
-  },
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "build": "vite build",
+  "dev": "vite"
+}
+,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^10.7.6",
