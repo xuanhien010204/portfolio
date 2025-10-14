@@ -100,10 +100,12 @@ export const Contact = () => {
           from_name: form.name,
           to_name: "Bùi Xuân Hiên",
           from_email: form.email.trim().toLowerCase(),
-          to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER,
+          to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER.trim().toLowerCase(),
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_KEY,
+        {
+          publicKey: import.meta.env.VITE_APP_EMAILJS_KEY,
+        },
       )
       .then(() => toast.success("Thanks for contacting me."))
       .catch((error) => {

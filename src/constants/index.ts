@@ -1,6 +1,7 @@
 // Contains constant data for using in website
 // ! Don't remove anything from here if not sure
 
+import { link } from "framer-motion/m";
 import {
   mobile,
   backend,
@@ -51,34 +52,29 @@ export const NAV_LINKS = [
     link: null,
   },
   {
-    id: "contact",
-    title: "Contact",
-    link: null,
-  },
-  {
     id: "source-code",
     title: "Source Code",
     link: "http://www.github.com/sanidhyy/3d-portfolio/",
   },
-] as const;
+];
 
 // Services
 export const SERVICES = [
   {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
+    title: "Backend Developer (.NET & Java)",
     icon: backend,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Web Developer (React + TypeScript)",
+    icon: web,
+  },
+  {
+    title: "Database Designer (SQL Server, PostgreSQL)",
+    icon: mongodb,
+  },
+  {
+    title: "Cloud & DevOps (Azure, Deployment)",
+    icon: docker,
   },
 ] as const;
 
@@ -141,55 +137,59 @@ export const TECHNOLOGIES = [
 // Experiences
 export const EXPERIENCES = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "Backend Developer (Academic Projects)",
+    company_name: "FPT University",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "2022 - 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Studied and applied core programming principles including Object-Oriented Programming (OOP) and software architecture design.",
+      "Built multiple academic projects using ASP.NET Core, C#, Java Spring Boot, and SQL Server.",
+      "Designed and implemented relational databases, applied Entity Framework Core and JPA/Hibernate for ORM.",
+      "Collaborated with team members using Git and GitHub to manage branches, pull requests, and code reviews.",
+      "Developed RESTful APIs with proper authentication, validation, and pagination following Clean Architecture principles.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "Full Stack Developer (Capstone Project)",
+    company_name: "FPT University",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "2024 - 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed a full-stack management system combining ASP.NET Core Web API and React + TypeScript + Tailwind CSS.",
+      "Implemented authentication and authorization using JWT and role-based access control.",
+      "Worked on real-world scenarios like restaurant and library management systems.",
+      "Integrated AI-powered APIs and Excel automation for task management using Azure Functions.",
+      "Practiced Agile development process and teamwork through sprint-based collaboration.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "Java & .NET Developer Intern",
+    company_name: "FPT Software Quy Nhon",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Jan 2025 - Apr 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and maintained backend APIs using ASP.NET Core and Spring Boot following Clean Architecture principles.",
+      "Implemented authentication and authorization using JWT and OAuth2.",
+      "Designed and optimized databases using SQL Server and PostgreSQL.",
+      "Deployed cloud applications on Microsoft Azure using App Service and CosmosDB.",
+      "Collaborated with other interns in team projects using GitHub and Agile methodology.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
+    title: ".NET Developer",
+    company_name: "An Moc Thanh Co., Ltd.",
     icon: meta,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "May 2025 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing backend APIs for a management software system with ASP.NET Core Web API and Entity Framework Core.",
+      "Implemented user authentication, data management, and reporting modules.",
+      "Integrated AI-powered APIs with Azure Functions to automate data workflows.",
+      "Worked on Excel file automation including complex formula handling and data processing.",
+      "Collaborated with frontend developers using RESTful APIs and Swagger documentation.",
     ],
   },
 ] as const;
@@ -198,26 +198,26 @@ export const EXPERIENCES = [
 export const TESTIMONIALS = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
+      "Hiển là một lập trình viên backend có tư duy logic rất tốt. Trong quá trình thực tập tại FPT Software Quy Nhơn, bạn ấy luôn chủ động học hỏi và đảm nhận những task khó, đặc biệt là phần API và xử lý dữ liệu trên Azure.",
+    name: "Nguyễn Lộc",
+    designation: "Project Manager",
+    company: "FPT Software - FHM.Q9",
     image: user1,
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
+      "Tôi rất ấn tượng với cách Hiển viết code rõ ràng, clean, và có khả năng debug nhanh. Bạn ấy hiểu khá sâu về .NET Core, SQL Server và biết cách triển khai hệ thống lên Azure một cách chuyên nghiệp.",
+    name: "Trần Minh Khang",
+    designation: "Senior Software Engineer",
+    company: "FPT Software",
     image: user2,
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
+      "Là teammate trong dự án Capstone, tôi nhận thấy Hiển luôn làm việc có trách nhiệm, biết cân bằng giữa backend và frontend. Bạn ấy hỗ trợ nhóm rất nhiều trong việc thiết kế API và tối ưu cơ sở dữ liệu.",
+    name: "Lê Thảo Vy",
+    designation: "Teammate - Capstone Project",
+    company: "FPT University",
     image: user3,
   },
 ] as const;
@@ -225,138 +225,61 @@ export const TESTIMONIALS = [
 // Projects
 export const PROJECTS = [
   {
-    name: "Disney+ Clone",
+    name: "Center Management System",
     description:
-      "Disney+ is one of the biggest streaming platforms used by millions of people world-wide and allows us to stream high quality content in 4k and various other formats",
+      "Developed a management system for an English center to manage students, classes, and schedules. Designed and implemented backend APIs, handled authentication, and optimized database queries for performance and scalability.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "firebase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "aspnetcore", color: "blue-text-gradient" },
+      { name: "sqlserver", color: "green-text-gradient" },
+      { name: "react", color: "pink-text-gradient" },
     ],
     image: project1,
-    source_code_link: "https://github.com/sanidhyy/disney-clone",
-    live_site_link: "https://clonedisneyplus.web.app/",
+    source_code_link: "https://github.com/xuanhien010204/CenterManagementSystem",
+    live_site_link: "",
   },
   {
-    name: "Golds Gym",
+    name: "Restaurant Management System",
     description:
-      "Web application that enables users to search for fitness exercises, effective personalized positions, and recommends new exercises based on their personal preferences.",
+      "A full-stack application for managing restaurant operations including table reservations, employee management, and menu handling. Built using .NET Core / Java Spring Boot for backend and React + Tailwind CSS for frontend.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rapidapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwindcss",
-        color: "pink-text-gradient",
-      },
+      { name: "dotnetcore", color: "blue-text-gradient" },
+      { name: "springboot", color: "green-text-gradient" },
+      { name: "postgresql", color: "pink-text-gradient" },
+      { name: "react", color: "blue-text-gradient" },
     ],
     image: project2,
-    source_code_link: "https://github.com/sanidhyy/fitness-app",
-    live_site_link: "https://fitness-gym-react.netlify.app/",
+    source_code_link: "https://github.com/xuanhien010204/RestaurantManagementSystem",
+    live_site_link: "",
   },
   {
-    name: "Shoppy",
+    name: "AI Task Automation Tool",
     description:
-      "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
+      "Developed during an internship at FPT Software. The system automatically generates project tasks using AI and allows exporting them to Excel with complex formulas. Built with Azure Functions, Cosmos DB, and integrated with OpenAI API.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "syncfusion",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "azurefunctions", color: "blue-text-gradient" },
+      { name: "cosmosdb", color: "green-text-gradient" },
+      { name: "openaiapi", color: "pink-text-gradient" },
+      { name: "excelautomation", color: "blue-text-gradient" },
     ],
     image: project3,
-    source_code_link: "https://github.com/sanidhyy/admin-dashboard",
-    live_site_link: "https://shoppy-dashboard-react.netlify.app/",
+    source_code_link: "https://github.com/xuanhien010204/AITaskAutomationTool",
+    live_site_link: "",
   },
   {
-    name: "TikTok Clone",
+    name: "FPTU AI & Robotics Challenge 2025",
     description:
-      "A Next JS Web Application that enables users to upload videos of any length and size, create accounts and connect with other people just like any other social media.",
+      "Certificate of participation as an organizer at FPTU AI & Robotics Challenge 2025. Developed a line-following autonomous vehicle and an environmental monitoring device equipped with sensors for temperature, humidity, and air quality.",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "nodejs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwindcss",
-        color: "pink-text-gradient",
-      },
+      { name: "iot", color: "green-text-gradient" },
+      { name: "arduino", color: "pink-text-gradient" },
+      { name: "ai-robotics", color: "blue-text-gradient" },
     ],
     image: project4,
-    source_code_link: "https://github.com/sanidhyy/tiktok-clone",
-    live_site_link: "https://tiktok-clone-react.vercel.app/",
-  },
-  {
-    name: "Cryptoverse",
-    description:
-      "Best Cryptocurrency web application that allows users to view price, market cap and daily change in realtime for almost every cryptocurrency in the world.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rapidapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project5,
-    source_code_link: "https://github.com/sanidhyy/crypto-app",
-    live_site_link: "https://reactjscryptoapp.netlify.app/",
-  },
-  {
-    name: "Travel Advisor",
-    description:
-      "Web application that enables you to view your nearby restaurants, hotels and attractions which can be sorted by ratings, price and much more.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rapidapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "material-ui",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project6,
-    source_code_link: "https://github.com/sanidhyy/travel-advisor",
-    live_site_link: "https://travel-advisor-reactjs.netlify.app/",
-  },
+    source_code_link: "",
+    live_site_link: "",
+  }
 ] as const;
+
 
 export const SOCIALS = [
   {

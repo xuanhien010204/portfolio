@@ -53,11 +53,19 @@ export const About = () => {
           variants={fadeIn(undefined, undefined, 0.1, 1)}
           className="empty-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          I'm a skilled website developer with experience in TypeScript and
-          Javascript, and expertise in frameworks like React, Node.js, and
-          Three.js. I'm a quick learner and collaborate closely with clients to
-          create efficient, scalable, and user-friendly solutions that solve
-          real-world problems. Let's work together to bring your ideas to life!
+          I have hands-on experience with:
+
+          .NET Core / ASP.NET Core Web API and Java Spring Boot for backend development
+
+          Entity Framework Core, JPA/Hibernate for ORM and database interactions
+
+          SQL Server, PostgreSQL, and Azure Cosmos DB for data storage
+
+          JWT Authentication, OAuth2, and Role-based Authorization for secure access control
+
+          Azure Function App, App Service, and Cloud Deployment for cloud-based solutions
+
+          OData, Pagination, Error Handling, and Async programming to optimize performance and maintainability
         </motion.p>
 
         {/* Service Card */}
