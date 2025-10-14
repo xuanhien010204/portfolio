@@ -54,7 +54,7 @@ export const NAV_LINKS = [
   {
     id: "source-code",
     title: "Source Code",
-    link: "http://www.github.com/sanidhyy/3d-portfolio/",
+    link: "https://github.com/xuanhien010204/",
   },
 ];
 
