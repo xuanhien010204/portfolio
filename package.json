@@ -23,9 +23,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/3d-portfolio.git"
+    "url": "https://github.com/xuanhien010204/portfolio.git"
   },
-  "homepage": "https://github.com/sanidhyy/3d-portfolio#readme",
+  "homepage": "https://xuanhien010204.github.io/portfolio",
   "bugs": {
     "url": "https://github.com/sanidhyy/3d-portfolio/issues",
     "email": "sanidhya.verma12345@gmail.com"
@@ -42,10 +42,10 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
-    "preview": "vite preview",
-    "check-types": "tsc --noEmit"
+    "dev": "vite"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -73,9 +73,11 @@
     "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
+    "rollup": "^4.52.4",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.9.3",
-    "vite": "^7.1.9"
+    "vite": "^7.1.9",
+    "gh-pages": "^5.0.0"
   },
   "overrides": {
     "react-intersection-observer": {
