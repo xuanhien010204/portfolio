@@ -26,9 +26,25 @@ export const Hero = () => {
             Hi, I'm <span className="text-[#915eff]">Bùi Xuân Hiên</span>
           </h1>
           <p className={cn(styles.heroSubText, "mt-2 text-white-100")}>
-            I develop backend, user <br className="sm:block hidden" />
-            interfaces and web applications
+            .NET Backend Engineer focused on <br className="sm:block hidden" />
+            ASP.NET Core, Clean Architecture, APIs and cloud deployment.
           </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="https://github.com/xuanhien010204"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="rounded-xl bg-tertiary px-5 py-3 text-white font-semibold shadow-md shadow-primary hover:bg-[#2f2857] transition"
+            >
+              View GitHub
+            </a>
+            <a
+              href="#work"
+              className="rounded-xl border border-secondary px-5 py-3 text-white font-semibold hover:bg-white/10 transition"
+            >
+              Featured Work
+            </a>
+          </div>
         </div>
       </div>
 
