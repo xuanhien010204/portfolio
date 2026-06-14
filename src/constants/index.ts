@@ -12,7 +12,6 @@ import {
   reactjs,
   redux,
   tailwind,
-  nodejs,
   mongodb,
   git,
   figma,
@@ -29,9 +28,6 @@ import {
   user1,
   user2,
   user3,
-  youtube,
-  linkedin,
-  twitter,
   github,
 } from "../assets";
 
@@ -62,7 +58,7 @@ export const NAV_LINKS = [
 // Services
 export const SERVICES = [
   {
-    title: "Backend Developer (.NET & Java)",
+    title: "Backend Developer (.NET)",
     icon: backend,
   },
   {
@@ -114,7 +110,7 @@ export const TECHNOLOGIES = [
     icon: backend,
   },
   {
-    name: "Spring Boot",
+    name: "Java Spring Boot",
     icon: mobile,
   },
   {
@@ -122,7 +118,7 @@ export const TECHNOLOGIES = [
     icon: mongodb,
   },
   {
-    name: "Azure",
+    name: "Azure Services",
     icon: threejs,
   },
   {
@@ -146,23 +142,23 @@ export const EXPERIENCES = [
     company_name: "FPT University",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "2022 - Present",
+    date: "2022 - Expected Nov 2026",
     points: [
-      "Studying Software Engineering with a strong focus on backend development, database design, software architecture, and fullstack product delivery.",
-      "Built academic and capstone-style projects using ASP.NET Core, Java Spring Boot, React, TypeScript, Tailwind CSS, SQL Server, and PostgreSQL.",
+      "Major in Software Engineering with a focus on backend development, database design, software architecture, and fullstack product delivery.",
+      "Built academic and capstone-oriented projects using ASP.NET Core, Java Spring Boot, React, TypeScript, Tailwind CSS, SQL Server, and PostgreSQL.",
       "Practiced Git, GitHub workflows, API documentation, teamwork, sprint-based delivery, and technical presentation for software projects.",
     ],
   },
   {
-    title: "Java & .NET Developer Intern",
+    title: ".NET / Java Developer",
     company_name: "FPT Software Quy Nhon",
     icon: shopify,
     iconBg: "#383E56",
     date: "Apr 2025 - Present",
     points: [
-      "Worked with backend APIs, data processing, and application features using .NET, Java, SQL, and cloud-related services.",
-      "Practiced production-oriented development habits including clear API contracts, debugging, code review, and maintainable implementation.",
-      "Integrated AI-powered workflows and automation ideas with Azure Functions, Cosmos DB, Excel processing, and API-driven systems.",
+      "Work with backend APIs, data processing, and application features using .NET, Java, SQL, and cloud-related services.",
+      "Practice production-oriented development habits including clear API contracts, debugging, code review, and maintainable implementation.",
+      "Build experience around AI-powered workflows, Azure Functions, Cosmos DB, Excel processing, and API-driven automation.",
     ],
   },
   {
@@ -172,9 +168,9 @@ export const EXPERIENCES = [
     iconBg: "#E6DEDD",
     date: "2024 - Present",
     points: [
-      "Designed and implemented backend-first systems with Clean Architecture, thin controllers, service layers, DTOs, validation, authentication, authorization, and EF Core persistence.",
-      "Built fullstack features with React, TypeScript, Tailwind CSS, REST APIs, Swagger/OpenAPI, pagination, filtering, and role-based access control.",
-      "Deployed and operated applications using Docker, Nginx, GitHub Actions, Azure services, VPS infrastructure, and cloud databases.",
+      "Design and implement backend-first systems with Clean Architecture, thin controllers, service layers, DTOs, validation, authentication, authorization, and EF Core persistence.",
+      "Build fullstack features with React, TypeScript, Tailwind CSS, REST APIs, Swagger/OpenAPI, pagination, filtering, and role-based access control.",
+      "Deploy and operate applications using Docker, Nginx, GitHub Actions, Azure services, VPS infrastructure, and cloud databases.",
     ],
   },
   {
@@ -185,34 +181,34 @@ export const EXPERIENCES = [
     date: "2025 - Present",
     points: [
       "Founded and led a university cyber security club to build a learning community around security, software engineering, teamwork, and practical technical activities.",
-      "Coordinated people, content, communication, and operations while improving leadership, planning, and technical mentoring skills.",
+      "Coordinate people, content, communication, and operations while improving leadership, planning, and technical mentoring skills.",
     ],
   },
 ] as const;
 
-// Testimonials
+// Professional focus cards. These are not third-party testimonials.
 export const TESTIMONIALS = [
   {
     testimonial:
-      "Focused on building backend systems with practical business rules, maintainable architecture, and real deployment experience.",
-    name: "Portfolio Note",
-    designation: "Personal positioning",
-    company: "Bùi Xuân Hiên",
+      "Backend-first developer focused on practical business rules, maintainable architecture, clean APIs, and real deployment experience.",
+    name: "Backend Focus",
+    designation: "ASP.NET Core / EF Core / SQL",
+    company: "Portfolio",
     image: user1,
   },
   {
     testimonial:
-      "Main strengths include ASP.NET Core, EF Core, SQL, API design, authentication, cloud deployment, and fullstack collaboration.",
-    name: "Technical Focus",
-    designation: "Backend / Fullstack",
+      "Strong interest in Clean Architecture, thin controllers, validation, authentication, authorization, pagination, and reliable API contracts.",
+    name: "Engineering Practice",
+    designation: "Clean Code / System Design",
     company: "Portfolio",
     image: user2,
   },
   {
     testimonial:
-      "Current direction: becoming a strong .NET backend engineer with fullstack, cloud, system design, and AI integration capability.",
+      "Long-term direction: become a strong .NET backend engineer with fullstack, cloud, DevOps, and AI integration capability.",
     name: "Career Direction",
-    designation: "Software Engineer",
+    designation: "Backend / Fullstack / Cloud",
     company: "Portfolio",
     image: user3,
   },
@@ -235,9 +231,9 @@ export const PROJECTS = [
     live_site_link: "",
   },
   {
-    name: "Center Management System",
+    name: "Course / Center Management System",
     description:
-      "A management system for students, classes, schedules, assignments, Q&A, announcements, notifications, and progress tracking. The backend uses ASP.NET Core, Identity/JWT, EF Core, SQL Server, Hangfire, and API documentation for frontend integration.",
+      "A .NET-based management system covering account, course, class, assignment, Q&A, announcement, profile, notification, and progress-related modules. Built to practice ASP.NET Core APIs, Identity/JWT, EF Core, SQL Server, Hangfire, and frontend API integration.",
     tags: [
       { name: "aspnetcore", color: "blue-text-gradient" },
       { name: "sqlserver", color: "green-text-gradient" },
@@ -283,20 +279,5 @@ export const SOCIALS = [
     name: "GitHub",
     icon: github,
     link: "https://github.com/xuanhien010204",
-  },
-  {
-    name: "LinkedIn",
-    icon: linkedin,
-    link: "https://www.linkedin.com/",
-  },
-  {
-    name: "YouTube",
-    icon: youtube,
-    link: "https://www.youtube.com/",
-  },
-  {
-    name: "Twitter / X",
-    icon: twitter,
-    link: "https://x.com/",
   },
 ] as const;
