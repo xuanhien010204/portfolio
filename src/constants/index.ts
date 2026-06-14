@@ -1,11 +1,9 @@
 // Contains constant data for using in website
 // ! Don't remove anything from here if not sure
 
-import { link } from "framer-motion/m";
 import {
   mobile,
   backend,
-  creator,
   web,
   javascript,
   typescript,
@@ -28,8 +26,6 @@ import {
   project2,
   project3,
   project4,
-  project5,
-  project6,
   user1,
   user2,
   user3,
@@ -52,9 +48,14 @@ export const NAV_LINKS = [
     link: null,
   },
   {
+    id: "contact",
+    title: "Contact",
+    link: null,
+  },
+  {
     id: "source-code",
-    title: "Source Code",
-    link: "https://github.com/xuanhien010204/",
+    title: "GitHub",
+    link: "https://github.com/xuanhien010204",
   },
 ];
 
@@ -65,15 +66,15 @@ export const SERVICES = [
     icon: backend,
   },
   {
-    title: "Web Developer (React + TypeScript)",
+    title: "Fullstack Developer (React + TypeScript)",
     icon: web,
   },
   {
-    title: "Database Designer (SQL Server, PostgreSQL)",
+    title: "Database & API Designer",
     icon: mongodb,
   },
   {
-    title: "Cloud & DevOps (Azure, Deployment)",
+    title: "Cloud & DevOps Learner",
     icon: docker,
   },
 ] as const;
@@ -109,59 +110,47 @@ export const TECHNOLOGIES = [
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "ASP.NET Core",
+    icon: backend,
   },
   {
-    name: "MongoDB",
+    name: "Spring Boot",
+    icon: mobile,
+  },
+  {
+    name: "SQL Server / PostgreSQL",
     icon: mongodb,
   },
   {
-    name: "Three JS",
+    name: "Azure",
     icon: threejs,
   },
   {
-    name: "git",
+    name: "Git / GitHub",
     icon: git,
   },
   {
-    name: "figma",
-    icon: figma,
+    name: "Docker",
+    icon: docker,
   },
   {
-    name: "docker",
-    icon: docker,
+    name: "Figma",
+    icon: figma,
   },
 ] as const;
 
 // Experiences
 export const EXPERIENCES = [
   {
-    title: "Backend Developer (Academic Projects)",
+    title: "Software Engineering Student",
     company_name: "FPT University",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "2022 - 2024",
+    date: "2022 - Present",
     points: [
-      "Studied and applied core programming principles including Object-Oriented Programming (OOP) and software architecture design.",
-      "Built multiple academic projects using ASP.NET Core, C#, Java Spring Boot, and SQL Server.",
-      "Designed and implemented relational databases, applied Entity Framework Core and JPA/Hibernate for ORM.",
-      "Collaborated with team members using Git and GitHub to manage branches, pull requests, and code reviews.",
-      "Developed RESTful APIs with proper authentication, validation, and pagination following Clean Architecture principles.",
-    ],
-  },
-  {
-    title: "Full Stack Developer (Capstone Project)",
-    company_name: "FPT University",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "2024 - 2025",
-    points: [
-      "Developed a full-stack management system combining ASP.NET Core Web API and React + TypeScript + Tailwind CSS.",
-      "Implemented authentication and authorization using JWT and role-based access control.",
-      "Worked on real-world scenarios like restaurant and library management systems.",
-      "Integrated AI-powered APIs and Excel automation for task management using Azure Functions.",
-      "Practiced Agile development process and teamwork through sprint-based collaboration.",
+      "Studying Software Engineering with a strong focus on backend development, database design, software architecture, and fullstack product delivery.",
+      "Built academic and capstone-style projects using ASP.NET Core, Java Spring Boot, React, TypeScript, Tailwind CSS, SQL Server, and PostgreSQL.",
+      "Practiced Git, GitHub workflows, API documentation, teamwork, sprint-based delivery, and technical presentation for software projects.",
     ],
   },
   {
@@ -169,27 +158,34 @@ export const EXPERIENCES = [
     company_name: "FPT Software Quy Nhon",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2025 - Apr 2025",
+    date: "Apr 2025 - Present",
     points: [
-      "Developed and maintained backend APIs using ASP.NET Core and Spring Boot following Clean Architecture principles.",
-      "Implemented authentication and authorization using JWT and OAuth2.",
-      "Designed and optimized databases using SQL Server and PostgreSQL.",
-      "Deployed cloud applications on Microsoft Azure using App Service and CosmosDB.",
-      "Collaborated with other interns in team projects using GitHub and Agile methodology.",
+      "Worked with backend APIs, data processing, and application features using .NET, Java, SQL, and cloud-related services.",
+      "Practiced production-oriented development habits including clear API contracts, debugging, code review, and maintainable implementation.",
+      "Integrated AI-powered workflows and automation ideas with Azure Functions, Cosmos DB, Excel processing, and API-driven systems.",
     ],
   },
   {
-    title: ".NET Developer",
-    company_name: "An Moc Thanh Co., Ltd.",
+    title: "Backend / Fullstack Project Developer",
+    company_name: "Personal & University Projects",
+    icon: tesla,
+    iconBg: "#E6DEDD",
+    date: "2024 - Present",
+    points: [
+      "Designed and implemented backend-first systems with Clean Architecture, thin controllers, service layers, DTOs, validation, authentication, authorization, and EF Core persistence.",
+      "Built fullstack features with React, TypeScript, Tailwind CSS, REST APIs, Swagger/OpenAPI, pagination, filtering, and role-based access control.",
+      "Deployed and operated applications using Docker, Nginx, GitHub Actions, Azure services, VPS infrastructure, and cloud databases.",
+    ],
+  },
+  {
+    title: "Founder / Lead",
+    company_name: "FPT Cyber Security Club",
     icon: meta,
     iconBg: "#E6DEDD",
-    date: "May 2025 - Present",
+    date: "2025 - Present",
     points: [
-      "Developing backend APIs for a management software system with ASP.NET Core Web API and Entity Framework Core.",
-      "Implemented user authentication, data management, and reporting modules.",
-      "Integrated AI-powered APIs with Azure Functions to automate data workflows.",
-      "Worked on Excel file automation including complex formula handling and data processing.",
-      "Collaborated with frontend developers using RESTful APIs and Swagger documentation.",
+      "Founded and led a university cyber security club to build a learning community around security, software engineering, teamwork, and practical technical activities.",
+      "Coordinated people, content, communication, and operations while improving leadership, planning, and technical mentoring skills.",
     ],
   },
 ] as const;
@@ -198,26 +194,26 @@ export const EXPERIENCES = [
 export const TESTIMONIALS = [
   {
     testimonial:
-      "Hiển là một lập trình viên backend có tư duy logic rất tốt. Trong quá trình thực tập tại FPT Software Quy Nhơn, bạn ấy luôn chủ động học hỏi và đảm nhận những task khó, đặc biệt là phần API và xử lý dữ liệu trên Azure.",
-    name: "Nguyễn Lộc",
-    designation: "Project Manager",
-    company: "FPT Software - FHM.Q9",
+      "Focused on building backend systems with practical business rules, maintainable architecture, and real deployment experience.",
+    name: "Portfolio Note",
+    designation: "Personal positioning",
+    company: "Bùi Xuân Hiên",
     image: user1,
   },
   {
     testimonial:
-      "Tôi rất ấn tượng với cách Hiển viết code rõ ràng, clean, và có khả năng debug nhanh. Bạn ấy hiểu khá sâu về .NET Core, SQL Server và biết cách triển khai hệ thống lên Azure một cách chuyên nghiệp.",
-    name: "Trần Minh Khang",
-    designation: "Senior Software Engineer",
-    company: "FPT Software",
+      "Main strengths include ASP.NET Core, EF Core, SQL, API design, authentication, cloud deployment, and fullstack collaboration.",
+    name: "Technical Focus",
+    designation: "Backend / Fullstack",
+    company: "Portfolio",
     image: user2,
   },
   {
     testimonial:
-      "Là teammate trong dự án Capstone, tôi nhận thấy Hiển luôn làm việc có trách nhiệm, biết cân bằng giữa backend và frontend. Bạn ấy hỗ trợ nhóm rất nhiều trong việc thiết kế API và tối ưu cơ sở dữ liệu.",
-    name: "Lê Thảo Vy",
-    designation: "Teammate - Capstone Project",
-    company: "FPT University",
+      "Current direction: becoming a strong .NET backend engineer with fullstack, cloud, system design, and AI integration capability.",
+    name: "Career Direction",
+    designation: "Software Engineer",
+    company: "Portfolio",
     image: user3,
   },
 ] as const;
@@ -225,36 +221,37 @@ export const TESTIMONIALS = [
 // Projects
 export const PROJECTS = [
   {
-    name: "Center Management System",
+    name: "ASRP Restaurant Platform",
     description:
-      "Developed a management system for an English center to manage students, classes, and schedules. Designed and implemented backend APIs, handled authentication, and optimized database queries for performance and scalability.",
+      "A multi-brand restaurant platform focused on pickup-first ordering, branch/menu management, reviews, analytics, scheduling, authentication, payment flow, and production deployment. Built with Clean Architecture, ASP.NET Core, EF Core, PostgreSQL, Redis/Hangfire, Docker, Nginx, and GitHub Actions.",
     tags: [
       { name: "aspnetcore", color: "blue-text-gradient" },
-      { name: "sqlserver", color: "green-text-gradient" },
-      { name: "react", color: "pink-text-gradient" },
+      { name: "cleanarchitecture", color: "green-text-gradient" },
+      { name: "postgresql", color: "pink-text-gradient" },
+      { name: "docker", color: "blue-text-gradient" },
     ],
     image: project1,
-    source_code_link: "https://github.com/xuanhien010204/CenterManagementSystem",
+    source_code_link: "https://github.com/xuanhien010204/asrp-be",
     live_site_link: "",
   },
   {
-    name: "Restaurant Management System",
+    name: "Center Management System",
     description:
-      "A full-stack application for managing restaurant operations including table reservations, employee management, and menu handling. Built using .NET Core / Java Spring Boot for backend and React + Tailwind CSS for frontend.",
+      "A management system for students, classes, schedules, assignments, Q&A, announcements, notifications, and progress tracking. The backend uses ASP.NET Core, Identity/JWT, EF Core, SQL Server, Hangfire, and API documentation for frontend integration.",
     tags: [
-      { name: "dotnetcore", color: "blue-text-gradient" },
-      { name: "springboot", color: "green-text-gradient" },
-      { name: "postgresql", color: "pink-text-gradient" },
-      { name: "react", color: "blue-text-gradient" },
+      { name: "aspnetcore", color: "blue-text-gradient" },
+      { name: "sqlserver", color: "green-text-gradient" },
+      { name: "efcore", color: "pink-text-gradient" },
+      { name: "hangfire", color: "blue-text-gradient" },
     ],
     image: project2,
-    source_code_link: "https://github.com/xuanhien010204/RestaurantManagementSystem",
+    source_code_link: "",
     live_site_link: "",
   },
   {
     name: "AI Task Automation Tool",
     description:
-      "Developed during an internship at FPT Software. The system automatically generates project tasks using AI and allows exporting them to Excel with complex formulas. Built with Azure Functions, Cosmos DB, and integrated with OpenAI API.",
+      "An automation-oriented project using AI APIs, Azure Functions, Cosmos DB, and Excel processing to generate and export structured project tasks. The project strengthened my experience with cloud functions, API integration, and data workflow automation.",
     tags: [
       { name: "azurefunctions", color: "blue-text-gradient" },
       { name: "cosmosdb", color: "green-text-gradient" },
@@ -262,44 +259,44 @@ export const PROJECTS = [
       { name: "excelautomation", color: "blue-text-gradient" },
     ],
     image: project3,
-    source_code_link: "https://github.com/xuanhien010204/AITaskAutomationTool",
+    source_code_link: "",
     live_site_link: "",
   },
   {
-    name: "FPTU AI & Robotics Challenge 2025",
+    name: "Restaurant Management System",
     description:
-      "Certificate of participation as an organizer at FPTU AI & Robotics Challenge 2025. Developed a line-following autonomous vehicle and an environmental monitoring device equipped with sensors for temperature, humidity, and air quality.",
+      "A restaurant management project covering users, roles, menu, reservations, orders, payment-related flows, and administration features. Built to practice backend APIs, relational modeling, authentication, and frontend integration.",
     tags: [
-      { name: "iot", color: "green-text-gradient" },
-      { name: "arduino", color: "pink-text-gradient" },
-      { name: "ai-robotics", color: "blue-text-gradient" },
+      { name: "dotnet", color: "blue-text-gradient" },
+      { name: "springboot", color: "green-text-gradient" },
+      { name: "postgresql", color: "pink-text-gradient" },
+      { name: "react", color: "blue-text-gradient" },
     ],
     image: project4,
     source_code_link: "",
     live_site_link: "",
-  }
+  },
 ] as const;
-
 
 export const SOCIALS = [
   {
-    name: "YouTube",
-    icon: youtube,
-    link: "https://www.youtube.com/@OPGAMER.",
-  },
-  {
-    name: "Linkedin",
-    icon: linkedin,
-    link: "https://www.linkedin.com/in/sanidhyy",
-  },
-  {
-    name: "Twitter",
-    icon: twitter,
-    link: "https://twitter.com/TechnicalShubam",
-  },
-  {
     name: "GitHub",
     icon: github,
-    link: "https://github.com/sanidhyy",
+    link: "https://github.com/xuanhien010204",
+  },
+  {
+    name: "LinkedIn",
+    icon: linkedin,
+    link: "https://www.linkedin.com/",
+  },
+  {
+    name: "YouTube",
+    icon: youtube,
+    link: "https://www.youtube.com/",
+  },
+  {
+    name: "Twitter / X",
+    icon: twitter,
+    link: "https://x.com/",
   },
 ] as const;
