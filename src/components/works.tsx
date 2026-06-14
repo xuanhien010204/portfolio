@@ -38,34 +38,41 @@ const ProjectCard = ({
           className="w-full h-full object-cover rounded-2xl"
         />
 
-        {/* Live Site */}
+        {/* Project Links */}
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-          <div
-            onClick={() => window.open(live_site_link, "_blank", "noreferrer")}
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-          >
-            <img
-              src={preview}
-              alt="Live Site"
-              title="Live Site"
-              className="w-2/3 h-2/3 object-contain"
-            />
-          </div>
+          {live_site_link && (
+            <button
+              type="button"
+              onClick={() => window.open(live_site_link, "_blank", "noreferrer")}
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              aria-label={`Open live site for ${name}`}
+            >
+              <img
+                src={preview}
+                alt="Live Site"
+                title="Live Site"
+                className="w-2/3 h-2/3 object-contain"
+              />
+            </button>
+          )}
 
-          {/* Github */}
-          <div
-            onClick={() =>
-              window.open(source_code_link, "_blank", "noreferrer")
-            }
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer ml-2"
-          >
-            <img
-              src={github}
-              alt="Github"
-              title="Github"
-              className="w-1/2 h-1/2 object-contain"
-            />
-          </div>
+          {source_code_link && (
+            <button
+              type="button"
+              onClick={() =>
+                window.open(source_code_link, "_blank", "noreferrer")
+              }
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer ml-2"
+              aria-label={`Open source code for ${name}`}
+            >
+              <img
+                src={github}
+                alt="Github"
+                title="Github"
+                className="w-1/2 h-1/2 object-contain"
+              />
+            </button>
+          )}
         </div>
       </div>
 
@@ -102,13 +109,14 @@ export const Works = () => {
         <div className="w-full flex">
           <motion.p
             variants={fadeIn(undefined, undefined, 0.1, 1)}
-            className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+            className="mt-3 text-secondary text-[17px] max-w-4xl leading-[30px]"
           >
-            Following projects showcases my skills and experience through
-            real-world examples of my work. Each project is briefly described
-            with links to code repositories and live demos in it. It reflects my
-            ability to solve complex problems, work with different technologies,
-            and manage projects effectively.
+            These projects show my backend-first engineering direction: clear
+            business rules, maintainable API design, authentication,
+            authorization, database modeling, deployment, and fullstack
+            collaboration. My strongest project is ASRP, a restaurant platform
+            where I apply Clean Architecture, ASP.NET Core, EF Core,
+            PostgreSQL, Docker, cloud deployment, and real product workflows.
           </motion.p>
         </div>
 
