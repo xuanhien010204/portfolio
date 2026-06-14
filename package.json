@@ -1,45 +1,38 @@
 {
-  "name": "3d-portfolio",
-  "version": "1.1.4",
+  "name": "xuanhien-portfolio",
+  "version": "1.0.0",
   "private": true,
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "Bui Xuan Hien",
+    "url": "https://github.com/xuanhien010204"
   },
-  "description": "Modern 3D Portfolio using React, Three.js and Typescript",
+  "description": "Professional portfolio of Bui Xuan Hien, a .NET Backend and Fullstack Developer focused on ASP.NET Core, Clean Architecture, React, SQL, Azure, and cloud deployment.",
   "keywords": [
-    "reactjs",
+    "bui xuan hien",
+    "xuanhien010204",
+    "portfolio",
+    "dotnet",
+    "aspnet-core",
+    "csharp",
+    "entity-framework-core",
+    "sql-server",
+    "postgresql",
+    "spring-boot",
     "react",
-    "porfolio-app",
-    "three-js",
-    "modern-ui/ux",
-    "js",
-    "javascript",
-    "html",
-    "css",
-    "tailwindcss"
+    "typescript",
+    "tailwindcss",
+    "azure",
+    "docker"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/3d-portfolio.git"
+    "url": "https://github.com/xuanhien010204/portfolio.git"
   },
-  "homepage": "https://github.com/sanidhyy/3d-portfolio#readme",
+  "homepage": "https://github.com/xuanhien010204/portfolio#readme",
   "bugs": {
-    "url": "https://github.com/sanidhyy/3d-portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://github.com/xuanhien010204/portfolio/issues"
   },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
-  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
