@@ -51,21 +51,17 @@ export const About = () => {
         {/* Body */}
         <motion.p
           variants={fadeIn(undefined, undefined, 0.1, 1)}
-          className="empty-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-4 text-secondary text-[17px] max-w-4xl leading-[30px]"
         >
-          I have hands-on experience with:
-
-          .NET Core / ASP.NET Core Web API and Java Spring Boot for backend development
-
-          Entity Framework Core, JPA/Hibernate for ORM and database interactions
-
-          SQL Server, PostgreSQL, and Azure Cosmos DB for data storage
-
-          JWT Authentication, OAuth2, and Role-based Authorization for secure access control
-
-          Azure Function App, App Service, and Cloud Deployment for cloud-based solutions
-
-          OData, Pagination, Error Handling, and Async programming to optimize performance and maintainability
+          I am Bùi Xuân Hiên, a software engineering student at FPT University
+          and a developer focused on backend systems, API design, database
+          modeling, and cloud deployment. My strongest stack is C# with
+          ASP.NET Core, Entity Framework Core, Identity/JWT, SQL Server and
+          PostgreSQL. I also build fullstack products with React, TypeScript,
+          Tailwind CSS, Java Spring Boot, Azure services, Docker, and GitHub
+          Actions. I care about clean architecture, thin controllers, reliable
+          business rules, maintainable code, and practical systems that can be
+          deployed and operated in real environments.
         </motion.p>
 
         {/* Service Card */}
