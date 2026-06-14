@@ -53,15 +53,15 @@ export const About = () => {
           variants={fadeIn(undefined, undefined, 0.1, 1)}
           className="mt-4 text-secondary text-[17px] max-w-4xl leading-[30px]"
         >
-          I am Bùi Xuân Hiên, a software engineering student at FPT University
-          and a developer focused on backend systems, API design, database
-          modeling, and cloud deployment. My strongest stack is C# with
-          ASP.NET Core, Entity Framework Core, Identity/JWT, SQL Server and
-          PostgreSQL. I also build fullstack products with React, TypeScript,
-          Tailwind CSS, Java Spring Boot, Azure services, Docker, and GitHub
-          Actions. I care about clean architecture, thin controllers, reliable
-          business rules, maintainable code, and practical systems that can be
-          deployed and operated in real environments.
+          I am Bùi Xuân Hiên, a Software Engineering student at FPT University
+          and a developer at FPT Software Quy Nhon. I focus on backend systems,
+          API design, database modeling, and cloud deployment. My strongest
+          stack is C# with ASP.NET Core, Entity Framework Core, Identity/JWT,
+          SQL Server, and PostgreSQL. I also build fullstack features with
+          React, TypeScript, Tailwind CSS, Java Spring Boot, Azure services,
+          Docker, and GitHub Actions. I care about Clean Architecture, thin
+          controllers, reliable business rules, maintainable code, and practical
+          systems that can be deployed and operated in real environments.
         </motion.p>
 
         {/* Service Card */}
