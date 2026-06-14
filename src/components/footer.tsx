@@ -15,10 +15,10 @@ const Footer = () => {
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <p className="text-white text-md font-bold flex">
-          &copy; Shubham {new Date().getFullYear()}. All rights reserved.
+          &copy; Bùi Xuân Hiên {new Date().getFullYear()}. All rights reserved.
         </p>
 
-        {/* Nav Links (Desktop) */}
+        {/* Social Links */}
         <ul className="list-none hidden flex-row sm:flex gap-10">
           {SOCIALS.map((social) => (
             <li
