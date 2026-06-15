@@ -28,13 +28,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Clean install dependencies
-        run: |
-          npm config set optional true
-          npm config set omit ""
-          rm -rf node_modules
-          rm -f package-lock.json
-          npm install --include=optional
+      - name: Install dependencies
+        run: npm install --include=optional
 
       - name: Install native build packages
         run: |
