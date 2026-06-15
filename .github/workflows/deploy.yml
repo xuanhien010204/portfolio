@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -27,17 +26,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
           cache: npm
 
-      - name: Clean npm cache and lock state
-        run: |
-          npm cache clean --force
-          rm -rf node_modules
-          rm -f package-lock.json
-
       - name: Install dependencies
-        run: npm install
+        run: npm install --include=optional
+
+      - name: Fix Rollup native dependency
+        run: |
+          ROLLUP_VERSION=$(node -p "require('./node_modules/rollup/package.json').version")
+          npm install --no-save @rollup/rollup-linux-x64-gnu@$ROLLUP_VERSION
 
       - name: Type check
         run: npm run check-types
