@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #f8fafc;
+  --color-surface: rgba(255, 255, 255, 0.84);
+  --color-primary: #2563eb;
+  --color-accent: #7c3aed;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-border: rgba(226, 232, 240, 0.85);
+}
+
+.dark {
+  --color-background: #020617;
+  --color-surface: rgba(15, 23, 42, 0.7);
+  --color-primary: #60a5fa;
+  --color-accent: #a78bfa;
+  --color-text: #e2e8f0;
+  --color-muted: #94a3b8;
+  --color-border: rgba(51, 65, 85, 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 24%),
+    radial-gradient(circle at 85% 10%, rgba(124, 58, 237, 0.12), transparent 18%),
+    var(--color-background);
+  color: var(--color-text);
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.22);
+  color: var(--color-text);
+}
+
+@layer base {
+  a,
+  button {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-copy {
+    @apply max-w-3xl text-base leading-8 text-muted md:text-lg;
+  }
+
+  .surface-card {
+    @apply rounded-[28px] border border-border bg-surface shadow-panel backdrop-blur-xl;
+  }
+
+  .blueprint-grid {
+    background-image: linear-gradient(to right, rgba(100, 116, 139, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-border px-3 py-1 text-sm text-muted;
+  }
+}

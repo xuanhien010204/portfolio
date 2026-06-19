@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" rx="48" fill="#020617" />
+  <rect x="28" y="28" width="1144" height="574" rx="32" fill="url(#paint0_linear)" fill-opacity="0.08" />
+  <path d="M0 140C174 67 338 30 492 30C695 30 871 93 1020 220C1109 296 1169 373 1200 450V630H0V140Z" fill="url(#paint1_radial)" fill-opacity="0.4" />
+  <rect x="82" y="92" width="162" height="162" rx="36" fill="#0F172A" stroke="#334155" />
+  <path d="M126 130H147V160H182V130H203V224H182V184H147V224H126V130Z" fill="#E2E8F0" />
+  <text x="82" y="332" fill="#60A5FA" font-family="Arial, sans-serif" font-size="22" letter-spacing="5">BACKEND SOFTWARE ENGINEER</text>
+  <text x="82" y="402" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="58" font-weight="700">
+    Bui Xuan Hien
+  </text>
+  <text x="82" y="462" fill="#94A3B8" font-family="Arial, sans-serif" font-size="28">
+    Reliable APIs • Scalable backend systems • Clean architecture
+  </text>
+  <text x="82" y="522" fill="#94A3B8" font-family="Arial, sans-serif" font-size="24">
+    ASP.NET Core • CQRS • PostgreSQL • Azure • Docker
+  </text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="82" y1="82" x2="1118" y2="548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB" />
+      <stop offset="1" stop-color="#7C3AED" />
+    </linearGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(873 153) rotate(139.557) scale(742.938 811.553)">
+      <stop stop-color="#2563EB" />
+      <stop offset="1" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>
