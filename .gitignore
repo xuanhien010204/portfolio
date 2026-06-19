@@ -11,6 +11,8 @@ lerna-debug.log*
 *.tsbuildinfo
 
 node_modules
+.next
+out
 dist
 dist-ssr
 *.local

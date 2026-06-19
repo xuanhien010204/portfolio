@@ -2,7 +2,36 @@
   "name": "bui-xuan-hien-portfolio",
   "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Bui Xuan Hien",
+    "url": "https://github.com/xuanhien010204"
+  },
   "description": "Premium portfolio website for Bui Xuan Hien built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.",
+  "keywords": [
+    "bui xuan hien",
+    "xuanhien010204",
+    "portfolio",
+    "backend engineer",
+    "dotnet",
+    "aspnet-core",
+    "csharp",
+    "clean architecture",
+    "cqrs",
+    "postgresql",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "nextjs"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuanhien010204/portfolio.git"
+  },
+  "homepage": "https://xuanhien.dev",
+  "bugs": {
+    "url": "https://github.com/xuanhien010204/portfolio/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "next dev",
