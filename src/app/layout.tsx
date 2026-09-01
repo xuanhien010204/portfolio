@@ -1,39 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/portfolio";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.defaultSiteUrl;
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-mono",
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const themeInitScript = `
-  (function() {
-    try {
-      var saved = localStorage.getItem("theme");
-      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      var theme = saved || (prefersDark ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", theme === "dark");
-    } catch (error) {}
-  })();
-`;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.siteUrl;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteConfig.displayName} | Backend Software Engineer`,
-    template: `%s | ${siteConfig.displayName}`,
+    default: `${siteConfig.name} | .NET Backend Engineer`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
@@ -48,16 +23,16 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "Portfolio",
   ],
-  authors: [{ name: siteConfig.displayName }],
-  creator: siteConfig.displayName,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: `${siteConfig.displayName} | Backend Software Engineer`,
+    title: `${siteConfig.name} | .NET Backend Engineer`,
     description: siteConfig.description,
     url: siteUrl,
-    siteName: `${siteConfig.displayName} Portfolio`,
+    siteName: `${siteConfig.name} Portfolio`,
     locale: "en_US",
     type: "website",
     images: [
@@ -65,13 +40,13 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.displayName} portfolio preview`,
+        alt: `${siteConfig.name} portfolio preview`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.displayName} | Backend Software Engineer`,
+    title: `${siteConfig.name} | .NET Backend Engineer`,
     description: siteConfig.description,
     images: ["/og-image.svg"],
   },
@@ -82,10 +57,9 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+    { color: "#050816" },
   ],
-  colorScheme: "light dark",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -94,9 +68,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+    <html lang="en" className="dark">
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>

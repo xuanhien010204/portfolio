@@ -1,339 +1,145 @@
 export const siteConfig = {
-  name: "Bui Xuan Hien",
-  displayName: "Bui Xuan Hien",
-  nativeName: "Bui Xuan Hien",
-  role: "Backend Software Engineer",
-  company: "FPT Software",
-  school: "FPT University",
-  graduation: "Expected graduation: November 2026",
-  location: "Ho Chi Minh City, Vietnam",
-  brandStatement:
-    "Backend Engineer focused on building reliable APIs, scalable cloud-ready systems, and clean architecture solutions.",
-  heroHeadline:
-    "Building reliable APIs, scalable backend systems, and clean architecture that holds up in production.",
-  description:
-    "Portfolio of Bui Xuan Hien, a backend software engineer at FPT Software focused on API design, system design, cloud-ready architecture, and production-minded engineering.",
-  defaultSiteUrl: "https://xuanhien.dev",
+  name: "Bùi Xuân Hiên",
+  role: ".NET Backend Engineer",
+  company: "FPT Software Quy Nhon",
+  location: "Vietnam",
+  siteUrl: "https://xuanhien.dev",
   githubUrl: "https://github.com/xuanhien010204",
   linkedinUrl: "https://vn.linkedin.com/in/b%C3%B9i-xu%C3%A2n-hi%C3%AAn-4a45042b7",
   resumePath: "/Bui-Xuan-Hien-Resume.md",
+  description:
+    ".NET Backend Engineer specializing in ASP.NET Core, Clean Architecture, PostgreSQL, cloud systems, and production-ready API development.",
 } as const;
 
 export const navItems = [
-  { id: "hero", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "design", label: "System Design" },
-  { id: "github", label: "GitHub" },
-  { id: "contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#architecture", label: "Architecture" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
-export const heroSignals = [
-  "Backend-first engineering mindset",
-  "Current role at FPT Software",
-  "Building while studying at FPT University",
-  "Clean Architecture and cloud-ready systems",
-] as const;
-
-export const heroMetrics = [
-  { value: "3", label: "Flagship systems showcased" },
-  { value: "2", label: "Primary backend ecosystems (.NET and Spring)" },
-  { value: "2026", label: "Expected graduation while already shipping software" },
-] as const;
-
-export const engineeringPrinciples = [
-  {
-    title: "Reliability over demo code",
-    description:
-      "I care about transaction boundaries, authorization rules, state transitions, and the boring details that keep systems trustworthy in production.",
-  },
-  {
-    title: "Architecture with intent",
-    description:
-      "I prefer clear boundaries between API, application, domain, and infrastructure so features stay understandable as the system grows.",
-  },
-  {
-    title: "Cloud-ready delivery",
-    description:
-      "I design backend services to be deployable, observable, and easy to move through CI/CD pipelines instead of living only on a laptop.",
-  },
-  {
-    title: "Continuous growth loop",
-    description:
-      "Working as an engineer while finishing university keeps my learning grounded in real constraints, real feedback, and real delivery pressure.",
-  },
-] as const;
-
-export const experienceTimeline = [
-  {
-    period: "Current",
-    title: "Software Engineer",
-    organization: "FPT Software",
-    summary:
-      "Contributing as a professional engineer while still completing a software engineering degree, with a strong emphasis on backend execution quality and maintainable delivery.",
-    bullets: [
-      "Build backend features with an API-first mindset and careful attention to data consistency.",
-      "Approach production work through clean boundaries, testability, and deployment readiness.",
-      "Translate engineering requirements into reliable implementation details rather than surface-level feature code.",
-    ],
-  },
-  {
-    period: "2024 - Present",
-    title: "Founder and Leader",
-    organization: "FPT Cyber Security Club",
-    summary:
-      "Created and led a student technical community focused on security awareness, peer learning, and practical problem solving.",
-    bullets: [
-      "Set direction for club activities, knowledge sharing, and member growth.",
-      "Helped connect technical curiosity with hands-on learning and engineering discipline.",
-      "Built leadership experience alongside individual contributor engineering work.",
-    ],
-  },
-  {
-    period: "Flagship build",
-    title: "Backend Engineer",
-    organization: "ASRP Platform",
-    summary:
-      "Designed and implemented backend capabilities for a large-scale multi-brand restaurant platform with business-heavy workflows and architecture discipline.",
-    bullets: [
-      "Modeled order lifecycle rules, pickup scheduling logic, reviews, payments, analytics, and RBAC authorization.",
-      "Applied Clean Architecture, CQRS, specification-based querying, and Docker-based delivery.",
-      "Integrated PostgreSQL and AWS S3 while keeping feature growth aligned with a coherent application structure.",
-    ],
-  },
-  {
-    period: "Academic to production bridge",
-    title: "Software Engineering Student",
-    organization: "FPT University",
-    summary:
-      "Studying software engineering with a practical portfolio built around production-oriented backend systems rather than only classroom exercises.",
-    bullets: [
-      "Expected graduation in November 2026.",
-      "Focused on turning coursework into architecture, deployment, and API design depth.",
-      "Used projects as a laboratory for applying industry patterns under realistic constraints.",
-    ],
-  },
+export const metrics = [
+  { value: "1+", label: "Years in professional engineering" },
+  { value: ".NET", label: "Primary backend ecosystem" },
+  { value: "3", label: "Major systems showcased" },
+  { value: "Cloud", label: "Deployment-ready mindset" },
 ] as const;
 
 export const skillGroups = [
+  { label: "Backend engineering", skills: ["C#", "ASP.NET Core", "EF Core", "Java", "Spring Boot", "REST API", "JWT", "Identity"] },
+  { label: "Data", skills: ["PostgreSQL", "SQL Server", "Cosmos DB", "Redis", "Relational modeling", "Query optimization"] },
+  { label: "Cloud & delivery", skills: ["Azure", "AWS", "Docker", "GitHub Actions", "Nginx", "Linux", "CI/CD"] },
+  { label: "Architecture", skills: ["Clean Architecture", "SOLID", "Repository", "Specification", "Dependency Injection", "System Design"] },
+  { label: "Product surface", skills: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "OpenAPI", "Responsive UI"] },
+] as const;
+
+export const principles = [
+  { index: "01", title: "Business rules first", copy: "Frameworks change. Business rules are the system." },
+  { index: "02", title: "Stable API contracts", copy: "Predictable contracts make frontend/backend collaboration reliable." },
+  { index: "03", title: "Deployable systems", copy: "A feature is not done if it only works locally." },
+  { index: "04", title: "Maintainability", copy: "Software should be easier to change tomorrow than it was today." },
+] as const;
+
+export type ProjectSlug = "asrp" | "course-management" | "ai-automation";
+
+export type Project = {
+  slug: ProjectSlug;
+  number: string;
+  name: string;
+  shortName: string;
+  category: string;
+  featured: boolean;
+  summary: string;
+  outcome: string;
+  technologies: readonly string[];
+  flow: readonly string[];
+  sections: readonly { title: string; body: string; points: readonly string[] }[];
+};
+
+export const projects: readonly Project[] = [
   {
-    title: "Backend",
-    summary:
-      "The center of gravity is service design, request flow, authorization, persistence boundaries, and maintainable application logic.",
-    skills: [
-      "C#",
-      "ASP.NET Core",
-      ".NET 8 / .NET 10",
-      "Entity Framework Core",
-      "REST API",
-      "Clean Architecture",
-      "CQRS",
-      "Specification Pattern",
-      "JWT Authentication",
-      "SignalR",
-      "Hangfire",
-      "Java",
-      "Spring Boot",
+    slug: "asrp",
+    number: "01",
+    name: "ASRP — AI-Powered Smart Restaurant Platform",
+    shortName: "ASRP Restaurant Platform",
+    category: "Featured backend system",
+    featured: true,
+    summary: "A backend-heavy restaurant platform handling ordering, pickup scheduling, restaurant operations, reviews, payments, analytics, authentication, and deployment.",
+    outcome: "A production-oriented system that keeps transactional order states, operational workflows, and infrastructure concerns behind stable API contracts.",
+    technologies: ["ASP.NET Core", "EF Core", "PostgreSQL", "Redis", "Hangfire", "Docker", "Nginx", "GitHub Actions"],
+    flow: ["Customer", "Branch", "Menu", "Cart", "Checkout", "Payment", "Confirm", "Kitchen", "Preparing", "Ready", "Pickup", "Complete"],
+    sections: [
+      { title: "Problem", body: "Restaurant ordering is more than CRUD: availability, pickup timing, payment, branch operations, and state transitions must agree under real business constraints.", points: ["Model explicit order states", "Keep customer and manager actions predictable", "Preserve API contracts as workflows evolve"] },
+      { title: "Architecture", body: "The solution follows Clean Architecture so transport, application use cases, domain rules, and persistence remain independently understandable.", points: ["Thin API controllers", "Application-owned orchestration", "Domain-centered business rules", "Infrastructure behind abstractions"] },
+      { title: "Pickup scheduling", body: "Scheduling logic is centralized around preparation rules, branch configuration, workload, and pickup constraints instead of being scattered across endpoints.", points: ["Single scheduling responsibility", "Explicit constraints", "Testable decisions"] },
+      { title: "Data consistency", body: "Orders and payments cross multiple business states. Transaction boundaries and explicit transitions protect the system from invalid partial progress.", points: ["Transactional state changes", "Validation before mutation", "Concurrency-aware workflows"] },
+      { title: "Caching & background work", body: "Redis supports frequently accessed or transient data while Hangfire moves appropriate work outside the request lifecycle.", points: ["Purposeful cache boundaries", "Retryable background jobs", "Fast request paths"] },
+      { title: "Deployment", body: "The application is designed to leave the laptop: GitHub Actions builds and delivers Docker workloads through Nginx on Linux infrastructure with HTTPS.", points: ["Repeatable CI/CD", "Containerized runtime", "Reverse-proxy boundary"] },
     ],
   },
   {
-    title: "Cloud and DevOps",
-    summary:
-      "I think about how software leaves development machines and survives real environments, releases, and infrastructure differences.",
-    skills: [
-      "Azure",
-      "Azure Functions",
-      "Cosmos DB",
-      "AWS S3",
-      "AWS RDS",
-      "Docker",
-      "Docker Compose",
-      "Nginx",
-      "GitHub Actions",
-      "CI/CD",
+    slug: "course-management",
+    number: "02",
+    name: "Course / Center Management System",
+    shortName: "Course Management System",
+    category: "Cloud-ready application",
+    featured: false,
+    summary: "An academic operations system spanning authentication, role-based access, courses, classes, assignments, progress, Q&A, and notifications.",
+    outcome: "A broad product workflow organized around secure APIs and maintainable modules, with deployment considered as part of delivery.",
+    technologies: ["ASP.NET Core", "EF Core", "SQL Server", "Identity", "JWT", "Hangfire", "Azure"],
+    flow: ["Identity", "Role", "Course", "Class", "Assignment", "Progress", "Notification"],
+    sections: [
+      { title: "Problem", body: "Course operations cross several roles and connected records, so authorization and data ownership need to stay explicit.", points: ["Role-aware access", "Connected academic workflows", "Consistent API behavior"] },
+      { title: "Architecture", body: "Modules separate authentication, course operations, assignments, progress, and notifications while sharing clear persistence patterns.", points: ["Thin endpoints", "EF Core persistence", "JWT and Identity"] },
+      { title: "Background work", body: "Notification tasks can run outside the main request path, keeping user actions responsive and retryable.", points: ["Hangfire jobs", "Request-path discipline", "Operational visibility"] },
+      { title: "What I learned", body: "Feature breadth only stays manageable when contracts, authorization, and module responsibilities are defined early.", points: ["Design boundaries before growth", "Treat deployment as engineering", "Prefer explicit ownership"] },
     ],
   },
   {
-    title: "Databases",
-    summary:
-      "Strong backend work depends on good data modeling, clear query intent, and respect for consistency, performance, and change over time.",
-    skills: ["SQL Server", "PostgreSQL", "Redis", "Database Design", "Query Optimization"],
-  },
-  {
-    title: "Frontend and Collaboration",
-    summary:
-      "Frontend is not the main identity, but understanding the client layer helps me design better contracts and smoother team workflows.",
-    skills: ["React", "TypeScript", "Tailwind CSS", "API Contract Design", "GitHub", "Agile Collaboration"],
+    slug: "ai-automation",
+    number: "03",
+    name: "AI Task Automation Tool",
+    shortName: "AI Task Automation",
+    category: "Serverless workflow",
+    featured: false,
+    summary: "A serverless automation flow that turns user input into structured tasks with AI processing, durable storage, and Excel export.",
+    outcome: "A focused cloud workflow connecting AI output to a repeatable operational artifact rather than stopping at a chat response.",
+    technologies: ["Azure Functions", "Cosmos DB", "OpenAI API", "Excel Automation"],
+    flow: ["User input", "Azure Function", "AI processing", "Structured tasks", "Cosmos DB", "Excel export"],
+    sections: [
+      { title: "Problem", body: "Unstructured requests need to become consistent, useful task records without adding manual formatting work.", points: ["Normalize input", "Constrain AI output", "Produce structured results"] },
+      { title: "Architecture", body: "A serverless function coordinates AI processing, persistence, and export with a deliberately small operational surface.", points: ["Event-oriented compute", "Cosmos DB persistence", "Explicit output shape"] },
+      { title: "Engineering decisions", body: "The AI response is treated as untrusted external input and shaped before it becomes stored or exported data.", points: ["Validate structure", "Handle failures", "Keep boundaries observable"] },
+      { title: "What I learned", body: "AI features become useful systems when they have contracts, persistence, recoverability, and a clear downstream workflow.", points: ["AI is one component", "Design for incomplete responses", "Measure operational value"] },
+    ],
   },
 ] as const;
 
-export const featuredProjects = [
-  {
-    name: "ASRP Platform",
-    status: "Flagship architecture case study",
-    overview:
-      "A large-scale multi-brand restaurant platform designed to centralize operations across brands while keeping order workflows, reviews, payments, and analytics coherent.",
-    architecture: [
-      "Clean Architecture with strong separation between API, application, domain, and infrastructure concerns.",
-      "CQRS-style request handling for clearer feature boundaries and more maintainable growth.",
-      "PostgreSQL persistence combined with AWS S3 integration and Dockerized deployment workflows.",
-    ],
-    challenges: [
-      "Handling a complex order lifecycle without letting state transitions become scattered across controllers.",
-      "Designing pickup scheduling logic that respects business rules while staying testable and extensible.",
-      "Keeping RBAC authorization and payment-related flows disciplined as features expand across multiple brands.",
-    ],
-    impact:
-      "Shows my strongest backend profile: architecture-driven delivery, business workflow modeling, and platform thinking beyond a single CRUD module.",
-    stack: [
-      "ASP.NET Core",
-      "Clean Architecture",
-      "CQRS",
-      "PostgreSQL",
-      "AWS S3",
-      "Docker",
-      "RBAC",
-      "Analytics",
-    ],
-  },
-  {
-    name: "Course Management System",
-    status: "Cloud-deployed academic product build",
-    overview:
-      "A system covering authentication, course operations, assignments, Q&A, and notifications, built to connect backend implementation with a realistic product workflow.",
-    architecture: [
-      "Authentication and course management centered around clear API contracts and reliable state changes.",
-      "Azure deployment used to move the project beyond local development and into cloud-oriented delivery.",
-      "Feature surface designed to exercise practical modules instead of isolated textbook examples.",
-    ],
-    challenges: [
-      "Balancing feature breadth across courses, assignments, Q&A, and notifications without losing backend clarity.",
-      "Designing a structure that can support both operational features and future expansion.",
-      "Connecting application logic with deployment concerns early in the project lifecycle.",
-    ],
-    impact:
-      "Demonstrates growth from classroom implementation toward product-minded engineering with deployment awareness.",
-    stack: ["ASP.NET Core", "Authentication", "Azure", "Notifications", "Course Workflows"],
-  },
-  {
-    name: "Restaurant Management API",
-    status: "Cross-stack backend proof point",
-    overview:
-      "A backend API focused on JWT authentication, menu management, reservations, and user management, built with Spring Boot to show cross-ecosystem backend fluency.",
-    architecture: [
-      "RESTful service design with clearly scoped modules for reservations, menus, and user operations.",
-      "JWT-based authentication for secure access patterns across the platform.",
-      "Backend design experience translated from .NET into Java and Spring Boot without losing engineering discipline.",
-    ],
-    challenges: [
-      "Maintaining clean API behavior across multiple business areas in a different backend ecosystem.",
-      "Designing reservation and menu flows that stay understandable and maintainable.",
-      "Proving that my engineering mindset is architectural rather than framework-dependent.",
-    ],
-    impact:
-      "Strengthens my positioning as a backend engineer who can transfer system design principles across technologies.",
-    stack: ["Java", "Spring Boot", "JWT", "REST API", "User Management"],
-  },
+export const experience = [
+  { period: "Apr 2025 — Present", role: ".NET / Java Developer", company: "FPT Software Quy Nhon", details: ["Backend APIs and data processing", ".NET, Java, and SQL", "Azure Functions and Cosmos DB", "Debugging, API contracts, and code review", "AI workflow integration"] },
+  { period: "2022 — Expected Nov 2026", role: "Software Engineering", company: "FPT University", details: ["Software architecture", "Backend and API development", "Database design", "Cloud and full-stack delivery"] },
 ] as const;
 
-export const systemDesignShowcase = [
-  {
-    eyebrow: "Clean Architecture",
-    title: "Layered boundaries for long-term maintainability",
-    description:
-      "I structure systems so transport logic, use cases, business rules, and infrastructure concerns do not collapse into each other over time.",
-    nodes: ["API", "Application", "Domain", "Infrastructure"],
-    footer:
-      "The payoff is thinner controllers, clearer dependencies, and easier feature growth when requirements become more complex.",
-  },
-  {
-    eyebrow: "CQRS and API Design",
-    title: "Separate intent, validation, and read complexity",
-    description:
-      "Commands capture state changes. Queries focus on read shape. The result is a codebase where responsibilities are easier to reason about and evolve.",
-    nodes: ["Client", "Command / Query", "Validation", "Handler", "Read Model / Result"],
-    footer:
-      "This approach reduces feature coupling and makes edge cases more visible during implementation.",
-  },
-  {
-    eyebrow: "Data and cloud delivery",
-    title: "Persistence, caching, and deployment designed together",
-    description:
-      "Databases, storage, and delivery pipelines are part of system design, not afterthoughts added after the code already works locally.",
-    nodes: ["PostgreSQL / SQL Server", "Redis", "AWS S3 / Azure", "Docker / Nginx", "GitHub Actions"],
-    footer:
-      "I focus on backend systems that are understandable to operate as well as understandable to code.",
-  },
+export const githubRepositories = [
+  { name: "GroupTravelRecommender.ChatBot-main", language: "Python", updated: "Aug 2026", url: "https://github.com/xuanhien010204/GroupTravelRecommender.ChatBot-main" },
+  { name: "portfolio", language: "TypeScript", updated: "Jun 2026", url: "https://github.com/xuanhien010204/portfolio" },
+  { name: "grab_food_backend", language: "C#", updated: "Mar 2026", url: "https://github.com/xuanhien010204/grab_food_backend" },
 ] as const;
 
-export const githubHighlights = [
-  "Active open source learner with a public GitHub profile that reflects ongoing practice, experimentation, and project depth.",
-  "Uses GitHub as both a delivery tool and a learning surface for improving architecture, debugging, and collaboration habits.",
-  "The profile complements the portfolio by showing code activity, language distribution, and consistency over time.",
+export const requestLifecycle = [
+  { label: "Client", detail: "A clear contract starts the request." },
+  { label: "Nginx", detail: "TLS and reverse-proxy concerns stay at the edge." },
+  { label: "API", detail: "Controllers translate transport, not business rules." },
+  { label: "Auth", detail: "Identity and policy are checked before use cases run." },
+  { label: "Application", detail: "The use case coordinates validation and dependencies." },
+  { label: "Domain", detail: "Business invariants decide what is allowed." },
+  { label: "Data", detail: "Cache and persistence serve distinct responsibilities." },
+  { label: "Jobs", detail: "Deferred work leaves the synchronous request path." },
+  { label: "Observe", detail: "Logs and health signals close the feedback loop." },
 ] as const;
 
-export const certifications = [
-  {
-    title: "Azure Fundamentals",
-    status: "Target certification",
-    description:
-      "Natural next step for formalizing cloud fundamentals around services, pricing, architecture, and operational understanding.",
-  },
-  {
-    title: "Azure Developer Associate",
-    status: "Planned growth track",
-    description:
-      "Aligned with backend engineering goals around cloud-native development, deployments, integrations, and service design.",
-  },
-  {
-    title: "AWS Cloud Practitioner",
-    status: "Planned breadth",
-    description:
-      "Supports practical multi-cloud awareness, especially around storage, databases, and infrastructure vocabulary used in delivery teams.",
-  },
-  {
-    title: "Continuous system design study",
-    status: "Ongoing",
-    description:
-      "In practice, I am already strengthening this area through architecture-driven project work, backend writing, and production-minded learning.",
-  },
-] as const;
-
-export const leadershipItems = [
-  {
-    title: "FPT Cyber Security Club",
-    description:
-      "Founded and led a technical student community focused on security awareness, practical learning, and engineering curiosity.",
-  },
-  {
-    title: "Mentoring and peer support",
-    description:
-      "I enjoy helping peers think more clearly about backend design, debugging, and why implementation details matter beyond passing tests.",
-  },
-  {
-    title: "Technical writing",
-    description:
-      "I document backend lessons such as concurrency, reliability, and engineering tradeoffs so knowledge compounds instead of disappearing after delivery.",
-  },
-  {
-    title: "Work while studying",
-    description:
-      "Balancing professional engineering work with university has accelerated maturity, ownership, and the ability to learn under real delivery pressure.",
-  },
-] as const;
-
-export const contactPillars = [
-  "Backend engineering opportunities",
-  "API and architecture discussions",
-  "Cloud-ready product work",
-  "Technical collaboration with founders or engineering leads",
-] as const;
-
-export const roadmap = [
-  "Add real case-study pages for each flagship project with deeper architecture breakdowns.",
-  "Publish technical articles and link them into the leadership and GitHub sections.",
-  "Connect live GitHub and LinkedIn data through APIs for richer activity storytelling.",
-  "Replace the resume snapshot with a branded PDF and add production analytics after deployment.",
-] as const;
+export function getProject(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
