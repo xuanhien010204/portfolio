@@ -1,22 +1,22 @@
 export const siteConfig = {
   name: "Bùi Xuân Hiên",
-  role: ".NET Backend Engineer",
-  company: "FPT Software Quy Nhon",
+  role: "Software Engineer",
+  company: "FPT Software",
   location: "Vietnam",
   siteUrl: "https://xuanhien.dev",
   githubUrl: "https://github.com/xuanhien010204",
   linkedinUrl: "https://vn.linkedin.com/in/b%C3%B9i-xu%C3%A2n-hi%C3%AAn-4a45042b7",
   resumePath: "/Bui-Xuan-Hien-Resume.md",
   description:
-    ".NET Backend Engineer specializing in ASP.NET Core, Clean Architecture, PostgreSQL, cloud systems, and production-ready API development.",
+    "Software Engineer focused on production-ready backend systems, cloud infrastructure, and modern AI engineering.",
 } as const;
 
 export const navItems = [
+  { href: "/#work", label: "Work" },
+  { href: "/#expertise", label: "Expertise" },
+  { href: "/#credentials", label: "Credentials" },
+  { href: "/#journey", label: "Journey" },
   { href: "/#about", label: "About" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#architecture", label: "Architecture" },
-  { href: "/#skills", label: "Skills" },
-  { href: "/#experience", label: "Experience" },
   { href: "/#contact", label: "Contact" },
 ] as const;
 

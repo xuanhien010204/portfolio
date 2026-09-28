@@ -7,7 +7,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.siteUrl;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteConfig.name} | .NET Backend Engineer`,
+    default: `${siteConfig.name} | Software Engineer`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${siteConfig.name} | .NET Backend Engineer`,
+    title: `${siteConfig.name} | Software Engineer`,
     description: siteConfig.description,
     url: siteUrl,
     siteName: `${siteConfig.name} Portfolio`,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | .NET Backend Engineer`,
+    title: `${siteConfig.name} | Software Engineer`,
     description: siteConfig.description,
     images: ["/og-image.svg"],
   },
