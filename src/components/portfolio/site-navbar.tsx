@@ -4,8 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
-import { navItems, siteConfig } from "@/data/portfolio";
+import { navItems, profileAssets, siteConfig } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 export function SiteNavbar() {
@@ -23,9 +24,16 @@ export function SiteNavbar() {
     <header className="fixed inset-x-0 top-0 z-50 pt-4">
       <Container>
         <div className={cn("nav-shell", scrolled && "nav-shell--scrolled")}>
-          <Link href="/" className="group flex items-center gap-3" aria-label="Bùi Xuân Hiên — home">
-            <span className="logo-mark">&lt;XH/&gt;</span>
-            <span className="hidden text-xs font-medium uppercase tracking-[0.2em] text-slate-400 xl:block">Xuân Hiên</span>
+          <Link href="/" className="group flex items-center gap-2.5" aria-label="Bùi Xuân Hiên — home">
+            <Image
+              src={profileAssets.hero}
+              alt={siteConfig.name}
+              width={32}
+              height={32}
+              className="nav-avatar"
+              priority
+            />
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300 transition-colors group-hover:text-white">Xuân Hiên</span>
           </Link>
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
             {navItems.map((item) => <Link key={item.href} href={item.href} className="nav-link">{item.label}</Link>)}

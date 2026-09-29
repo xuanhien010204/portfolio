@@ -46,7 +46,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-
 .nav-shell { display: flex; min-height: 62px; align-items: center; justify-content: space-between; border: 1px solid transparent; border-radius: 18px; padding: .55rem .65rem .55rem 1rem; transition: .35s ease; }
 .nav-shell--scrolled { border-color: var(--line); background: rgba(6, 10, 23, .8); box-shadow: 0 18px 60px rgba(0,0,0,.3); backdrop-filter: blur(18px); }
 .logo-mark { font-family: var(--font-ibm-plex-mono); font-size: .83rem; font-weight: 600; letter-spacing: -.03em; color: white; }
-.nav-link { border-radius: 10px; padding: .65rem .78rem; font-size: .82rem; color: #9aa8bc; transition: .25s ease; }
+.nav-avatar { width: 30px; height: 30px; border-radius: 9999px; object-fit: cover; object-position: center 20%; border: 1px solid rgba(85, 221, 255, 0.4); box-shadow: 0 0 10px rgba(85, 221, 255, 0.18); transition: border-color .25s ease, box-shadow .25s ease; }
+.group:hover .nav-avatar { border-color: rgba(85, 221, 255, 0.85); box-shadow: 0 0 14px rgba(85, 221, 255, 0.4); }
 .nav-link:hover { background: rgba(255,255,255,.045); color: white; }
 .icon-button { display: inline-flex; width: 42px; height: 42px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.025); color: #cad6e7; }
 .icon-button:hover { border-color: rgba(85,221,255,.35); color: var(--cyan); }
@@ -1550,6 +1551,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-
   font-size: 0.8rem;
   font-weight: 600;
   color: #38bdf8;
+}
+
+.footer-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1px solid rgba(85, 221, 255, 0.35);
+  box-shadow: 0 0 12px rgba(85, 221, 255, 0.15);
 }
 
 .premium-footer div {

@@ -490,9 +490,15 @@ export function PortfolioPage() {
             </div>
           </Reveal>
           <footer className="premium-footer">
-            <span>&lt;XH/&gt;</span>
+            <Image
+              src={profileAssets.hero}
+              alt={siteConfig.name}
+              width={38}
+              height={38}
+              className="footer-avatar"
+            />
             <div>
-              <strong>Bùi Xuân Hiên</strong>
+              <strong>{siteConfig.name}</strong>
               <small>Software Engineer · Backend · Cloud · AI</small>
             </div>
             <p>xuanhien.dev</p>
