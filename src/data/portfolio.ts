@@ -11,6 +11,99 @@ export const siteConfig = {
     "Software Engineer focused on production-ready backend systems, cloud infrastructure, and modern AI engineering.",
 } as const;
 
+export const profileAssets = {
+  hero: "/images/profile/bui-xuan-hien.jpg",
+  about: "/images/profile/bui-xuan-hien.jpg",
+} as const;
+
+export type CredentialCategory = "Microsoft" | "GitHub" | "AI";
+
+export type Credential = {
+  issuer: string;
+  name: string;
+  category: CredentialCategory;
+  categories: readonly CredentialCategory[];
+  mediaPath: string;
+  mediaType: "image" | "pdf";
+  thumbnailPath: string;
+  credentialUrl: string | null;
+  credentialId?: string;
+  earnedDate?: string;
+};
+
+export const credentials: readonly Credential[] = [
+  {
+    issuer: "Microsoft",
+    name: "Microsoft Certified: Agentic AI Business Solutions Architect",
+    category: "AI",
+    categories: ["AI", "Microsoft"],
+    mediaPath: "/credentials/agentic-ai-business-solutions-architect.pdf",
+    mediaType: "pdf",
+    thumbnailPath: "/credentials/agentic-ai-business-solutions-architect.png",
+    credentialUrl: "https://learn.microsoft.com/en-us/users/hienbuixuan-1985/credentials/certification/agentic-ai-business-solutions-architect?tab=credentials-tab",
+    credentialId: "EEAFD1F2E9EDCC5A",
+    earnedDate: "September 2026",
+  },
+  {
+    issuer: "Microsoft",
+    name: "Microsoft Certified: Azure AI Apps and Agents Developer Associate",
+    category: "AI",
+    categories: ["AI", "Microsoft"],
+    mediaPath: "/credentials/azure-ai-apps-and-agents-developer-associate.pdf",
+    mediaType: "pdf",
+    thumbnailPath: "/credentials/azure-ai-apps-and-agents-developer-associate.png",
+    credentialUrl: "https://learn.microsoft.com/en-us/users/hienbuixuan-1985/credentials/certification/azure-ai-apps-and-agents-developer-associate?tab=credentials-tab",
+    credentialId: "24988236E28DA64F",
+    earnedDate: "September 2026",
+  },
+  {
+    issuer: "Anthropic",
+    name: "Claude Certified Architect - Foundations",
+    category: "AI",
+    categories: ["AI"],
+    mediaPath: "/credentials/claude-certified-architect.pdf",
+    mediaType: "pdf",
+    thumbnailPath: "/credentials/claude-certified-architect.png",
+    credentialUrl: "https://www.credly.com/badges/f1ac10d9-9d54-4184-af48-55459cc67d61",
+    credentialId: "f1ac10d9-9d54-4184-af48-55459cc67d61",
+    earnedDate: "July 2026",
+  },
+  {
+    issuer: "Microsoft Learn / GitHub",
+    name: "GitHub Copilot",
+    category: "GitHub",
+    categories: ["GitHub", "AI"],
+    mediaPath: "/credentials/github-copilot.pdf",
+    mediaType: "pdf",
+    thumbnailPath: "/credentials/github-copilot.png",
+    credentialUrl: "https://learn.microsoft.com/en-us/users/buixuanhien-010204/credentials/certification/github-copilot?tab=credentials-tab",
+    credentialId: "3FEB2C4899CFE520",
+    earnedDate: "May 2026",
+  },
+  {
+    issuer: "Microsoft",
+    name: "Frontier Transformation Engineer",
+    category: "Microsoft",
+    categories: ["Microsoft"],
+    mediaPath: "/credentials/frontier-transformation-engineer.png",
+    mediaType: "image",
+    thumbnailPath: "/credentials/frontier-transformation-engineer.png",
+    credentialUrl: null,
+    earnedDate: "September 2026",
+  },
+  {
+    issuer: "Microsoft",
+    name: "Microsoft Sovereign Cloud - Proficient",
+    category: "Microsoft",
+    categories: ["Microsoft"],
+    mediaPath: "/credentials/microsoft-sovereign-cloud-proficient.png",
+    mediaType: "image",
+    thumbnailPath: "/credentials/microsoft-sovereign-cloud-proficient.png",
+    credentialUrl: null,
+    earnedDate: "September 2026",
+  },
+] as const;
+
 export const navItems = [
   { href: "/#work", label: "Work" },
   { href: "/#expertise", label: "Expertise" },
@@ -25,14 +118,6 @@ export const metrics = [
   { value: ".NET", label: "Primary backend ecosystem" },
   { value: "3", label: "Major systems showcased" },
   { value: "Cloud", label: "Deployment-ready mindset" },
-] as const;
-
-export const skillGroups = [
-  { label: "Backend engineering", skills: ["C#", "ASP.NET Core", "EF Core", "Java", "Spring Boot", "REST API", "JWT", "Identity"] },
-  { label: "Data", skills: ["PostgreSQL", "SQL Server", "Cosmos DB", "Redis", "Relational modeling", "Query optimization"] },
-  { label: "Cloud & delivery", skills: ["Azure", "AWS", "Docker", "GitHub Actions", "Nginx", "Linux", "CI/CD"] },
-  { label: "Architecture", skills: ["Clean Architecture", "SOLID", "Repository", "Specification", "Dependency Injection", "System Design"] },
-  { label: "Product surface", skills: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "OpenAPI", "Responsive UI"] },
 ] as const;
 
 export const principles = [
@@ -126,18 +211,6 @@ export const githubRepositories = [
   { name: "GroupTravelRecommender.ChatBot-main", language: "Python", updated: "Aug 2026", url: "https://github.com/xuanhien010204/GroupTravelRecommender.ChatBot-main" },
   { name: "portfolio", language: "TypeScript", updated: "Jun 2026", url: "https://github.com/xuanhien010204/portfolio" },
   { name: "grab_food_backend", language: "C#", updated: "Mar 2026", url: "https://github.com/xuanhien010204/grab_food_backend" },
-] as const;
-
-export const requestLifecycle = [
-  { label: "Client", detail: "A clear contract starts the request." },
-  { label: "Nginx", detail: "TLS and reverse-proxy concerns stay at the edge." },
-  { label: "API", detail: "Controllers translate transport, not business rules." },
-  { label: "Auth", detail: "Identity and policy are checked before use cases run." },
-  { label: "Application", detail: "The use case coordinates validation and dependencies." },
-  { label: "Domain", detail: "Business invariants decide what is allowed." },
-  { label: "Data", detail: "Cache and persistence serve distinct responsibilities." },
-  { label: "Jobs", detail: "Deferred work leaves the synchronous request path." },
-  { label: "Observe", detail: "Logs and health signals close the feedback loop." },
 ] as const;
 
 export function getProject(slug: string) {

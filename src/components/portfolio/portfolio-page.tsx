@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, Braces, Cloud, Code2, Database, Github, Layers3, Linkedin, Mail, MapPin, Server, Sparkles } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/motion/reveal";
 import { CredentialGallery } from "@/components/portfolio/credential-gallery";
@@ -6,7 +7,7 @@ import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { TechBadge } from "@/components/ui/tech-badge";
-import { principles, projects, siteConfig } from "@/data/portfolio";
+import { principles, profileAssets, projects, siteConfig } from "@/data/portfolio";
 import { SiteNavbar } from "./site-navbar";
 
 const heroTechnologies = [".NET", "ASP.NET Core", "Azure", "Docker", "PostgreSQL", "AI"];
@@ -26,10 +27,10 @@ const journey = [
   { place: "NOW", role: "Backend · Cloud · AI Engineering", note: "Building" },
 ] as const;
 
-function PortraitPlaceholder({ compact = false }: { compact?: boolean }) {
-  return <div className={compact ? "portrait-placeholder portrait-placeholder--compact" : "portrait-placeholder"}>
+function ProfilePortrait({ compact = false }: { compact?: boolean }) {
+  return <div className={compact ? "profile-portrait profile-portrait--compact" : "profile-portrait"}>
+    <Image src={compact ? profileAssets.about : profileAssets.hero} alt="Bùi Xuân Hiên" fill loading={compact ? "lazy" : "eager"} sizes={compact ? "(max-width: 800px) 100vw, 45vw" : "(max-width: 800px) 90vw, 42vw"} className="profile-portrait__image" />
     <div className="portrait-grid" aria-hidden="true" /><div className="portrait-corners" aria-hidden="true"><i /><i /><i /><i /></div>
-    <div className="portrait-copy"><span>IMAGE SLOT · 01</span><strong>[REAL PROFILE PHOTO]</strong><small>Authentic portrait will be placed here</small></div>
     <div className="portrait-scan" aria-hidden="true" />
   </div>;
 }
@@ -49,7 +50,7 @@ export function PortfolioPage() {
     <SiteNavbar />
     <section id="home" className="premium-hero"><div className="hero-aurora" aria-hidden="true" /><Container className="relative z-10 pt-28 sm:pt-32"><div className="premium-hero__grid">
       <Reveal className="hero-copy"><p className="hero-kicker"><span /> SOFTWARE ENGINEER · VIETNAM</p><h1><span>BÙI XUÂN</span> HIÊN</h1><p className="hero-role">Software Engineer <i>@</i> FPT Software</p><h2>Building reliable software across <em>backend, cloud and AI.</em></h2><p className="hero-intro">Focused on production-ready backend systems, cloud infrastructure and modern AI engineering.</p><div className="hero-tech">{heroTechnologies.map((tech) => <TechBadge key={tech}>{tech}</TechBadge>)}</div><div className="hero-actions"><ActionLink href="#work" variant="primary">View my work</ActionLink><ActionLink href="#credentials">View credentials</ActionLink></div><div className="social-row"><Link href={siteConfig.githubUrl} target="_blank" rel="noreferrer"><Github /> GitHub</Link><Link href={siteConfig.linkedinUrl} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</Link><Link href={siteConfig.resumePath} download>Resume <ArrowUpRight /></Link></div></Reveal>
-      <Reveal delay={0.12} className="hero-portrait-wrap"><div className="portrait-meta portrait-meta--top"><span>ROLE</span><strong>Software Engineer</strong></div><PortraitPlaceholder /><div className="portrait-meta portrait-meta--bottom"><span>FOCUS</span><strong>Backend · Cloud · AI</strong></div><div className="portrait-location"><MapPin /> VIETNAM</div></Reveal>
+      <Reveal delay={0.12} className="hero-portrait-wrap"><div className="portrait-meta portrait-meta--top"><span>ROLE</span><strong>Software Engineer</strong></div><ProfilePortrait /><div className="portrait-meta portrait-meta--bottom"><span>FOCUS</span><strong>Backend · Cloud · AI</strong></div><div className="portrait-location"><MapPin /> VIETNAM</div></Reveal>
     </div></Container></section>
 
     <Container className="relative z-20"><Reveal className="credibility-strip">{trustItems.map(([title, copy]) => <div key={title}><span>{title}</span><strong>{copy}</strong></div>)}</Reveal></Container>
@@ -64,7 +65,7 @@ export function PortfolioPage() {
 
     <section id="journey" className="section-space"><Container><Reveal><SectionHeading eyebrow="JOURNEY" title="Progress, with purpose." /></Reveal><div className="journey-track">{journey.map((item, index) => <Reveal key={item.place + item.role} delay={index * 0.06} className="journey-step"><div className="journey-node"><span>{String(index + 1).padStart(2, "0")}</span></div><p>{item.note}</p><h3>{item.place}</h3><strong>{item.role}</strong></Reveal>)}</div></Container></section>
 
-    <section id="about" className="section-space section-tinted"><Container><div className="about-grid"><Reveal><PortraitPlaceholder compact /></Reveal><Reveal delay={0.1} className="about-copy"><p className="eyebrow">ABOUT</p><h2>Engineer behind the systems.</h2><p>I&apos;m Bùi Xuân Hiên, a Software Engineer at FPT Software focused on backend systems, cloud infrastructure and AI-enabled software.</p><p>I enjoy understanding how software behaves beyond the code — architecture, data, deployment and production reliability.</p><div className="about-facts"><div><span>ROLE</span><strong>Software Engineer</strong></div><div><span>FOCUS</span><strong>Backend · Cloud · AI</strong></div><div><span>LOCATION</span><strong>Vietnam</strong></div><div><span>PRIMARY STACK</span><strong>.NET · Azure</strong></div></div></Reveal></div></Container></section>
+    <section id="about" className="section-space section-tinted"><Container><div className="about-grid"><Reveal><ProfilePortrait compact /></Reveal><Reveal delay={0.1} className="about-copy"><p className="eyebrow">ABOUT</p><h2>Engineer behind the systems.</h2><p>I&apos;m Bùi Xuân Hiên, a Software Engineer at FPT Software focused on backend systems, cloud infrastructure and AI-enabled software.</p><p>I enjoy understanding how software behaves beyond the code — architecture, data, deployment and production reliability.</p><div className="about-facts"><div><span>ROLE</span><strong>Software Engineer</strong></div><div><span>FOCUS</span><strong>Backend · Cloud · AI</strong></div><div><span>LOCATION</span><strong>Vietnam</strong></div><div><span>PRIMARY STACK</span><strong>.NET · Azure</strong></div></div></Reveal></div></Container></section>
 
     <section id="github" className="section-space"><Container><Reveal><SectionHeading eyebrow="GITHUB" title="Engineering in public." /></Reveal><div className="repo-showcase">{["ASRP", "AI / Automation", "Backend projects", "Portfolio source"].map((name, index) => <Reveal key={name} delay={index * 0.04} className="repo-card"><div><Github /><span>PUBLIC WORK</span></div><h3>{name}</h3><p>{index === 0 ? "Restaurant platform architecture and backend workflows." : index === 1 ? "AI-enabled cloud and task automation experiments." : index === 2 ? "APIs, data and server-side engineering work." : "The source behind this portfolio experience."}</p><Link href={siteConfig.githubUrl} target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></Link></Reveal>)}</div><Reveal className="github-cta"><Github /><p>Explore implementation choices and ongoing work.</p><ActionLink href={siteConfig.githubUrl} variant="primary">View GitHub profile</ActionLink></Reveal></Container></section>
 
