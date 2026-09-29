@@ -12,12 +12,35 @@ import { cn } from "@/lib/utils";
 export function SiteNavbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 18);
     update();
     window.addEventListener("scroll", update, { passive: true });
     return () => window.removeEventListener("scroll", update);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 140;
+      const sectionIds = navItems.map((item) => item.href.replace("/#", ""));
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el && scrollPosition >= el.offsetTop) {
+          setActiveSection(id);
+          return;
+        }
+      }
+      if (window.scrollY < 200) {
+        setActiveSection("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -35,8 +58,20 @@ export function SiteNavbar() {
             />
             <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300 transition-colors group-hover:text-white">Xuân Hiên</span>
           </Link>
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
-            {navItems.map((item) => <Link key={item.href} href={item.href} className="nav-link">{item.label}</Link>)}
+          <nav className="nav-track hidden items-center lg:flex" aria-label="Primary navigation">
+            {navItems.filter((item) => item.href !== "/#contact").map((item) => {
+              const id = item.href.replace("/#", "");
+              const isActive = activeSection === id;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn("nav-link", isActive && "nav-link--active")}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
           <div className="hidden items-center gap-2 lg:flex">
             <Link href={siteConfig.githubUrl} target="_blank" rel="noreferrer" className="icon-button" aria-label="GitHub profile"><Github className="h-4 w-4" /></Link>
@@ -50,11 +85,24 @@ export function SiteNavbar() {
         <AnimatePresence>
           {open ? (
             <motion.div id="mobile-menu" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} className="mobile-menu">
-              <nav className="grid" aria-label="Mobile navigation">
-                {navItems.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="mobile-link">{item.label}</Link>)}
+              <nav className="grid gap-1" aria-label="Mobile navigation">
+                {navItems.map((item) => {
+                  const id = item.href.replace("/#", "");
+                  const isActive = activeSection === id;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={cn("mobile-link", isActive && "mobile-link--active")}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </nav>
               <div className="mt-3 grid grid-cols-2 gap-3 border-t border-white/10 pt-4">
-                <Link href={siteConfig.githubUrl} className="action-link action-link--secondary justify-center"><Github className="h-4 w-4" /> GitHub</Link>
+                <Link href={siteConfig.githubUrl} target="_blank" rel="noreferrer" className="action-link action-link--secondary justify-center"><Github className="h-4 w-4" /> GitHub</Link>
                 <Link href="/#contact" onClick={() => setOpen(false)} className="action-link action-link--primary justify-center">Contact</Link>
               </div>
             </motion.div>

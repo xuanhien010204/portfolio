@@ -120,8 +120,8 @@ export const credentials: readonly Credential[] = [
 
 export const navItems = [
   { href: "/#work", label: "Work" },
-  { href: "/#expertise", label: "Expertise" },
   { href: "/#credentials", label: "Credentials" },
+  { href: "/#expertise", label: "Expertise" },
   { href: "/#journey", label: "Journey" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
