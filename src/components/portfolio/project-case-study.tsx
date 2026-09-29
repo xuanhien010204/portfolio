@@ -17,7 +17,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
       <section className="case-hero">
         <div className="hero-grid-bg" aria-hidden="true" />
         <Container className="relative z-10 pt-36 sm:pt-44">
-          <Link href="/#projects" className="back-link"><ArrowLeft className="h-4 w-4" /> All projects</Link>
+          <Link href="/#work" className="back-link"><ArrowLeft className="h-4 w-4" /> All projects</Link>
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_0.58fr] lg:items-end">
             <div><p className="eyebrow">{project.number} / {project.category}</p><h1>{project.name}</h1><p className="case-lead">{project.summary}</p></div>
             <div className="case-outcome"><span>Engineering outcome</span><p>{project.outcome}</p></div>
