@@ -53,50 +53,61 @@ export function CredentialGallery() {
       <div className="credential-grid">
         {visible.map((credential, index) => (
           <Reveal key={credential.name} delay={index * 0.05} className="credential-card">
-            <div className="credential-media">
+            <div
+              className="credential-media cursor-pointer group"
+              onClick={() => setSelected(credential)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setSelected(credential);
+                }
+              }}
+              aria-label={`Preview ${credential.name}`}
+            >
               <Image
                 src={credential.thumbnailPath}
                 alt={`${credential.name} credential`}
                 fill
-                sizes="(max-width: 540px) 84vw, (max-width: 1100px) 50vw, 25vw"
-                className="object-contain p-2.5 transition-transform duration-300 hover:scale-[1.02]"
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.02]"
               />
-              <button
-                type="button"
-                className="credential-preview-trigger"
-                onClick={() => setSelected(credential)}
-                aria-label={`Preview ${credential.name}`}
-              >
-                <span className="credential-expand">
-                  <Expand aria-hidden="true" /> Preview
-                </span>
-              </button>
+              <span className="credential-expand">
+                <Expand aria-hidden="true" /> Preview
+              </span>
             </div>
             <div className="credential-info">
               <div>
-                <span>{credential.issuer}</span>
+                <span className="credential-issuer">{credential.issuer}</span>
                 <strong>{credential.name}</strong>
-                <small>{credential.categories.join(" · ")}</small>
+                <span className="credential-category">
+                  {credential.categories.join(" · ")}
+                  {credential.earnedDate ? ` · ${credential.earnedDate}` : ""}
+                </span>
               </div>
               <div className="credential-actions">
+                <button
+                  type="button"
+                  onClick={() => setSelected(credential)}
+                  className="credential-action-btn credential-action-btn--primary"
+                  aria-label={`Preview ${credential.name}`}
+                >
+                  <Expand className="h-3.5 w-3.5" aria-hidden="true" />
+                  <span>Preview</span>
+                </button>
                 {credential.credentialUrl ? (
                   <a
                     href={credential.credentialUrl}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`View ${credential.name} verification`}
+                    className="credential-action-btn"
+                    aria-label={`Verify ${credential.name} online`}
                   >
-                    View credential <ArrowUpRight />
+                    <span>Verify</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </a>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => setSelected(credential)}
-                    aria-label={`Preview ${credential.name}`}
-                  >
-                    View credential <Expand />
-                  </button>
-                )}
+                ) : null}
               </div>
             </div>
           </Reveal>
