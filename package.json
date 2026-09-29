@@ -41,7 +41,7 @@
     "check-types": "tsc --noEmit -p tsconfig.typecheck.json"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.8",
+    "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
