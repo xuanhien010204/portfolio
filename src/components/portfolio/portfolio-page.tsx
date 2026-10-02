@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { TechBadge } from "@/components/ui/tech-badge";
 import { principles, profileAssets, projects, siteConfig } from "@/data/portfolio";
+import { TubesBackground } from "@/components/effects/tubes-background";
 import { SiteNavbar } from "./site-navbar";
 
 const heroTechnologies = [".NET", "ASP.NET Core", "Azure", "Docker", "PostgreSQL", "AI"] as const;
@@ -130,6 +131,7 @@ export function PortfolioPage() {
 
       {/* Hero Section */}
       <section id="home" className="premium-hero">
+        <TubesBackground />
         <div className="hero-aurora" aria-hidden="true" />
         <Container className="relative z-10 pt-24 sm:pt-28 lg:pt-32">
           <div className="premium-hero__grid">
