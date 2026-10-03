@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://xuanhien.dev
+Sitemap: https://xuanhien.dev/sitemap.xml
