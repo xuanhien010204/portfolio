@@ -54,7 +54,7 @@ export class TubesEngine {
   private isDisposed = false;
   private isRunning = false;
   private animFrameId: number | null = null;
-  private clock = new THREE.Clock();
+  private startTime = 0;
 
   private intersectionObserver: IntersectionObserver | null = null;
   private resizeObserver: ResizeObserver | null = null;
@@ -323,14 +323,15 @@ export class TubesEngine {
   private start(): void {
     if (this.isRunning || this.isDisposed) return;
     this.isRunning = true;
-    this.clock.start();
+    if (!this.startTime) {
+      this.startTime = performance.now();
+    }
     this.tick();
   }
 
   private stop(): void {
     if (!this.isRunning) return;
     this.isRunning = false;
-    this.clock.stop();
     if (this.animFrameId !== null) {
       cancelAnimationFrame(this.animFrameId);
       this.animFrameId = null;
@@ -340,7 +341,7 @@ export class TubesEngine {
   private tick = (): void => {
     if (!this.isRunning || this.isDisposed) return;
 
-    const elapsed = this.clock.getElapsedTime();
+    const elapsed = (performance.now() - this.startTime) * 0.001;
 
     // 1. Compute target
     if (this.isHovered) {

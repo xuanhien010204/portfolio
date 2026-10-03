@@ -40,20 +40,13 @@ function ProfilePortrait({ compact = false }: { compact?: boolean }) {
     <div className={compact ? "profile-portrait profile-portrait--compact" : "profile-portrait"}>
       <Image
         src={compact ? profileAssets.about : profileAssets.hero}
-        alt="Bùi Xuân Hiên"
+        alt="Bùi Xuân Hiên — Software Engineer"
         fill
+        priority={!compact}
         loading={compact ? "lazy" : "eager"}
         sizes={compact ? "(max-width: 800px) 90vw, 380px" : "(max-width: 800px) 320px, 420px"}
         className="profile-portrait__image"
       />
-      <div className="portrait-grid" aria-hidden="true" />
-      <div className="portrait-corners" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-        <i />
-      </div>
-      <div className="portrait-scan" aria-hidden="true" />
     </div>
   );
 }
@@ -140,10 +133,10 @@ export function PortfolioPage() {
               <div className="hero-role-pill">
                 <span className="status-dot" aria-hidden="true" />
                 <span>SOFTWARE ENGINEER</span>
-                <span className="text-slate-500">·</span>
+                <span className="text-slate-600" aria-hidden="true">·</span>
                 <span>FPT SOFTWARE</span>
-                <span className="text-slate-500">·</span>
-                <span>VIETNAM</span>
+                <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
+                <span className="hidden sm:inline">VIETNAM</span>
               </div>
 
               {/* 2. NAME (Balanced prominence, not overpowering) */}
@@ -162,7 +155,7 @@ export function PortfolioPage() {
               {/* 4. CTA */}
               <div className="hero-actions">
                 <ActionLink href="#work" variant="primary">
-                  View my work
+                  Explore selected work
                 </ActionLink>
                 <ActionLink href="#credentials">
                   View credentials
@@ -192,17 +185,12 @@ export function PortfolioPage() {
 
             {/* Profile Portrait */}
             <Reveal delay={0.12} className="hero-portrait-wrap">
-              <div className="portrait-meta portrait-meta--top">
-                <span>ROLE</span>
-                <strong>Software Engineer</strong>
-              </div>
               <ProfilePortrait />
-              <div className="portrait-meta portrait-meta--bottom">
-                <span>FOCUS</span>
-                <strong>Backend · Cloud · AI</strong>
-              </div>
-              <div className="portrait-location">
-                <MapPin /> VIETNAM
+              <div className="hero-portrait-bar">
+                <span>Software Engineer @ FPT Software</span>
+                <strong>
+                  <MapPin className="h-3 w-3" /> Vietnam
+                </strong>
               </div>
             </Reveal>
           </div>
@@ -274,7 +262,7 @@ export function PortfolioPage() {
                   </div>
                   <Link href={`/projects/${project.slug}`} className="work-link">
                     {index === 1 ? "Explore workflow" : index === 2 ? "View project" : "Explore case study"}
-                    <ArrowRight />
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </Reveal>
@@ -405,6 +393,10 @@ export function PortfolioPage() {
                 <div>
                   <span>ROLE</span>
                   <strong>Software Engineer</strong>
+                </div>
+                <div>
+                  <span>EDUCATION</span>
+                  <strong>Software Engineering · FPT University</strong>
                 </div>
                 <div>
                   <span>FOCUS</span>

@@ -12,6 +12,8 @@ export function CredentialGallery() {
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>("All");
   const [selected, setSelected] = useState<Credential | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const lastActiveElementRef = useRef<HTMLElement | null>(null);
 
   const visible = useMemo(
     () =>
@@ -21,28 +23,79 @@ export function CredentialGallery() {
     [activeFilter]
   );
 
+  const openModal = (credential: Credential) => {
+    lastActiveElementRef.current = (document.activeElement as HTMLElement) || null;
+    setSelected(credential);
+  };
+
+  const closeModal = () => {
+    setSelected(null);
+  };
+
   useEffect(() => {
-    if (!selected) return;
+    if (!selected) {
+      if (lastActiveElementRef.current) {
+        lastActiveElementRef.current.focus();
+        lastActiveElementRef.current = null;
+      }
+      return;
+    }
+
     const previousOverflow = document.body.style.overflow;
-    const close = (event: KeyboardEvent) => event.key === "Escape" && setSelected(null);
     document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", close);
-    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeModal();
+        return;
+      }
+
+      if (event.key === "Tab") {
+        if (!panelRef.current) return;
+        const focusableElements = panelRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey) {
+          if (document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    // Focus the close button once opened
+    const timer = setTimeout(() => {
+      closeButtonRef.current?.focus();
+    }, 50);
+
     return () => {
+      clearTimeout(timer);
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", close);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [selected]);
 
   return (
     <div className="credentials-wrap">
-      <div className="credential-filters" role="tablist" aria-label="Filter credentials">
+      <div className="credential-filters" role="group" aria-label="Filter credentials by category">
         {filters.map((filter) => (
           <button
             key={filter}
             type="button"
-            role="tab"
-            aria-selected={activeFilter === filter}
+            aria-pressed={activeFilter === filter}
             className={activeFilter === filter ? "is-active" : ""}
             onClick={() => setActiveFilter(filter)}
           >
@@ -55,13 +108,13 @@ export function CredentialGallery() {
           <Reveal key={credential.name} delay={index * 0.05} className="credential-card">
             <div
               className="credential-media cursor-pointer group"
-              onClick={() => setSelected(credential)}
+              onClick={() => openModal(credential)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
-                  setSelected(credential);
+                  openModal(credential);
                 }
               }}
               aria-label={`Preview ${credential.name}`}
@@ -89,7 +142,7 @@ export function CredentialGallery() {
               <div className="credential-actions">
                 <button
                   type="button"
-                  onClick={() => setSelected(credential)}
+                  onClick={() => openModal(credential)}
                   className="credential-action-btn credential-action-btn--primary"
                   aria-label={`Preview ${credential.name}`}
                 >
@@ -119,9 +172,9 @@ export function CredentialGallery() {
           role="dialog"
           aria-modal="true"
           aria-label={`${selected.name} preview`}
-          onMouseDown={(event) => event.target === event.currentTarget && setSelected(null)}
+          onMouseDown={(event) => event.target === event.currentTarget && closeModal()}
         >
-          <div className="credential-modal__panel">
+          <div ref={panelRef} className="credential-modal__panel">
             <div className="credential-modal__header">
               <div>
                 <span>{selected.issuer}</span>
@@ -153,7 +206,7 @@ export function CredentialGallery() {
                 <button
                   ref={closeButtonRef}
                   type="button"
-                  onClick={() => setSelected(null)}
+                  onClick={closeModal}
                   aria-label="Close credential preview"
                   className="modal-close-btn"
                 >
